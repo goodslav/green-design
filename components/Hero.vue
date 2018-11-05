@@ -2,18 +2,17 @@
     <section class="min-h-screen">
         <div>
             <div
-                class="w-full h-full z-20 absolute pin-t px-32 text-white text-blue-lightest text-center flex
+                class="w-full h-full z-20 absolute pin-t lg:px-32 px-4 text-white text-blue-lightest text-center flex
                 items-center justify-center text-shadow--hero subpixel-antialiased">
                 <div>
-                    <h1 class="text-5xl mb-12">British Divers Marine Life Rescue</h1>
-                    <h3 class="text-xl">
-                        BDMLR is an organisation dedicated to the rescue and well-being of all marine
-                        <br />
-                        animals in distress around the UK.
+                    <h1 class="text-5xl mb-12 font-semibold">British Divers Marine Life Rescue</h1>
+                    <h3 class="text-xl font-semibold leading-normal">
+                        BDMLR is an organisation dedicated to the rescue and well-being of all marine animals in
+                        distress around the UK.
                     </h3>
                     <button
                         class="bg-blue-darkest text-blue-lightest hover:text-blue-light
-                        font-semibold py-2 px-4 border border-blue-light rounded shadow-lg text-xl mt-16">
+                        font-semibold py-4 px-8 border border-blue-light rounded shadow-lg text-lg mt-16">
                         Become a Medic
                     </button>
                 </div>

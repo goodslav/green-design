@@ -7,6 +7,10 @@ html {
     overflow-x: hidden;
 }
 
+html, body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .text-shadow--heading {
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }

@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import Vue from 'vue';
 import {
+    filter as _filter,
     find as _find,
     forEach as _forEach,
     forOwn as _forOwn,
@@ -18,6 +19,7 @@ import {
 
 Vue.mixin({
     methods: {
+        _filter,
         _find,
         _forEach,
         _forOwn,

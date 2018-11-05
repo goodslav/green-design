@@ -15,7 +15,13 @@ module.exports = {
                 content: 'Static website page for DeeToo Ltd. generated with Nuxt',
             },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i',
+            },
+        ],
     },
     env: {
         API_URL: process.env.API_URL || 'https://constructor.deetoo.co.uk/graphql',
