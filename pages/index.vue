@@ -30,13 +30,13 @@
                  </button>
              </div>
         </section>
+        <app-tools/>
         <h3 class="text-center pt-16 text-3xl font-semibold">Latest News</h3>
         <div class="flex px-32 py-8">
-            <card class="mx-4 my-8"></card>
-            <card class="mx-4 my-8"></card>
-            <card class="mx-4 my-8"></card>
+            <card class="mx-6 my-8"></card>
+            <card class="mx-6 my-8"></card>
+            <card class="mx-6 my-8"></card>
         </div>
-        <app-tools/>
         <footer-section/>
     </div>
 </template>
