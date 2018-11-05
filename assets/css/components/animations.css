@@ -1,0 +1,15 @@
+.fadeIn-enter-active,
+.fadeIn-leave-active {
+    transition: opacity 0.45s ease-in-out;
+}
+.fadeIn-enter, .fadeIn-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.fadeHero-enter-active,
+.fadeHero-leave-active {
+    transition: opacity 2s ease-in-out;
+}
+.fadeHero-enter, .fadeHero-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
