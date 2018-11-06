@@ -75,7 +75,7 @@ export default {
 
 <style>
 .main-nav {
-    @apply flex w-full fixed pin-t z-50 justify-between items-center max-w-4xl h-16 px-2;
+    @apply flex w-full fixed pin-t z-50 justify-between items-center h-16 px-2;
     background: rgba(255,255,255,0.75);
 }
 
