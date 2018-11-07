@@ -2,7 +2,7 @@
     <div>
         <app-navigation/>
         <app-hero/>
-        <section class="flex">
+        <section class="flex flex-wrap">
              <div class="w-full lg:w-2/3 bg-blue-lightest px-16 py-24">
                  <h2 class="text-3xl font-bold mb-8">Our Mission</h2>
                  <h3 class="text-base font-normal leading-loose italic mb-6">
