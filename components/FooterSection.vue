@@ -15,14 +15,32 @@
                         Marine Life Rescue
                     </h4>
                 </div>
-                <p class="text-blue-light italic text-sm mb-4">
+                <p class="text-blue-light italic text-sm mb-2">
                     Sed aliquam lacus id orci egestas scelerisque. Ut lobortis varius turpis, ac interdum leo posuere
                     vitae.
                 </p>
 
-                <div class="text-base">
-                    email:
-                    <a href="mailto:info@bdmlr.org.uk">info@bdmlr.org.uk</a>
+                <div class="text-base flex flex-wrap items-center">
+                    <a
+                        href="mailto:info@bdmlr.org.uk"
+                        class="text-orange-light hover:text-orange-lighter mr-2"
+                    >info@bdmlr.org.uk
+                    </a>
+                    <span class="flex-no-shrink sm:border-l border-blue-light sm:pl-2 my-2">
+                        Proudly created by
+                        <a
+                            href="https://www.deetoo.co.uk/"
+                            target="_blank"
+                            class="deetoo__logo inline-block"
+                        >
+                            <img
+                                src="https://s3.eu-west-2.amazonaws.com/deetoo-uk/art/logo-blue.svg"
+                                title="DeeToo Logo"
+                                alt="DeeToo company logo"
+                                style="height: 14px;"
+                            />
+                        </a>
+                    </span>
                 </div>
             </div>
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
@@ -48,11 +66,11 @@
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
                 <h5>Rescue Hotline</h5>
                 <div class="mb-2">
-                    <a href="tel:01825765546" class="text-orange text-xl">01825 765 546</a>
+                    <a href="tel:01825765546" class="text-orange hover:text-orange-light text-xl">01825 765 546</a>
                     <h4 class="text-base font-normal">Monday-Friday 9am-5pm</h4>
                 </div>
                 <div>
-                    <a href="tel:07787433412" class="text-orange text-xl">07787 433 412</a>
+                    <a href="tel:07787433412" class="text-orange hover:text-orange-light text-xl">07787 433 412</a>
                     <h4 class="text-base font-normal">Out of office hours</h4>
                 </div>
             </div>

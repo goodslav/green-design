@@ -23,3 +23,12 @@ footer ul li:before {
 footer ul li a:hover {
     @apply pl-2;
 }
+
+footer .deetoo__logo {
+    opacity: 0.8;
+    transition: opacity 0.5s;
+}
+
+footer .deetoo__logo:hover {
+    opacity: 1;
+}
