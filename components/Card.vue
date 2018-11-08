@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <div class="rounded overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6">
         <img
             class="w-full"
             src="https://tailwindcss.com/img/card-top.jpg"

@@ -6,13 +6,12 @@
                 items-center justify-center text-shadow--hero subpixel-antialiased">
                 <div>
                     <h1 class="text-5xl mb-12 font-semibold">British Divers Marine Life Rescue</h1>
-                    <h3 class="text-xl font-semibold leading-normal">
+                    <h3 class="text-xl font-normal leading-normal">
                         BDMLR is an organisation dedicated to the rescue and well-being of all marine animals in
                         distress around the UK.
                     </h3>
                     <button
-                        class="bg-blue-darkest text-blue-lightest hover:text-blue-light
-                        font-semibold py-4 px-8 border border-blue-light rounded shadow-lg text-lg mt-16">
+                        class="hero-button">
                         Become a Medic
                     </button>
                 </div>

@@ -1,4 +1,5 @@
 footer a {
+    transition: all 0.3s;
     @apply text-blue-light no-underline leading-normal;
 }
 
@@ -11,10 +12,14 @@ footer ul {
 }
 
 footer h5 {
-    @apply mb-2 font-semibold text-xl;
+    @apply mb-2 font-semibold text-xl border-orange border-b pb-1 inline-block;
 }
 
 footer ul li:before {
     @apply mr-2 text-orange font-semibold;
     content: '>';
+}
+
+footer ul li a:hover {
+    @apply pl-2;
 }

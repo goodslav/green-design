@@ -10,10 +10,10 @@
                         class="w-16 mr-4"
                         data-fade-offset="-600"
                     >
-                    <h5 class="text-2xl font-semibold leading-tight mb-0">
+                    <h4 class="text-2xl font-semibold leading-tight mb-0">
                         British Divers<br />
                         Marine Life Rescue
-                    </h5>
+                    </h4>
                 </div>
                 <p class="text-blue-light italic text-sm mb-4">
                     Sed aliquam lacus id orci egestas scelerisque. Ut lobortis varius turpis, ac interdum leo posuere
@@ -59,8 +59,10 @@
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
                 <h5>Address</h5>
 
-                <address class="text-sm leading-normal whitespace-pre-line mb-4">Lime House Regency Close,
-                    Uckfield,
+                <address
+                    class="text-sm leading-normal whitespace-pre-line mb-4"
+                >Lime House Regency Close
+                    Uckfield
                     East Sussex
                     TN22 1DS
                     UK

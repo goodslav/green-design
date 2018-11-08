@@ -57,6 +57,7 @@ export default `query FetchAll {
     id
     title
     description
+    created_at
     category {
       id
       name

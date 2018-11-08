@@ -1,5 +1,6 @@
 // eslint-disable-next-line
 import Vue from 'vue';
+import { format } from 'date-fns';
 import {
     filter as _filter,
     find as _find,
@@ -33,6 +34,9 @@ Vue.mixin({
         _trimEnd,
         _trimStart,
         _truncate,
+        formatDate(date, formatString = 'DD/MM/YYYY') {
+            return format(date, formatString);
+        },
         truncateText(text, length = 125) {
             return _truncate(text, { length, separator: /,? +/ });
         },

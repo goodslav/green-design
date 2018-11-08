@@ -1,0 +1,8 @@
+.hero-button {
+    @apply text-blue-lighter font-semibold py-4 px-6 rounded-full shadow text-base mt-12 leading-none;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-button:hover {
+    background: rgba(0,0,0,0.6);
+}
