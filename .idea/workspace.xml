@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4331b631-d5ae-4629-a95e-d972013db15c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/components/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/components/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FooterSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/FooterSection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,6 +26,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Navigation.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/Navigation.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OurMission.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/OurMission.vue">
           <provider selected="true" editor-type-id="text-editor">
@@ -41,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FooterSection.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FooterSection.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/FooterSection.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+            <state relative-caret-position="210">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#1;n#div#1;n#div#0;n#div#0;n#footer#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -53,9 +60,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logo-orange.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logo-orange.svg">
-          <provider selected="true" editor-type-id="images" />
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="Card.vue" pinned="false" current-in-tab="false">
@@ -71,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/assets/css/components/footer.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -106,27 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tools.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Tools.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>shadow</find>
-      <find>sans</find>
-      <find>font-family</find>
-      <find>fontFamily</find>
-      <find>button</find>
-      <find>test</find>
-      <find>indigo</find>
-      <find>max-w</find>
       <find>Out of</find>
       <find>Our</find>
       <find>our</find>
@@ -149,6 +143,14 @@
       <find>orange</find>
       <find>dee</find>
       <find>info</find>
+      <find>d</find>
+      <find>hamburger</find>
+      <find>visible</find>
+      <find>mobile</find>
+      <find>mobile-links</find>
+      <find>mobile-link</find>
+      <find>hamburget</find>
+      <find>hambu</find>
     </findStrings>
     <replaceStrings>
       <replace>teal</replace>
@@ -176,7 +178,6 @@
         <option value="$PROJECT_DIR$/assets/css/components/global.css" />
         <option value="$PROJECT_DIR$/nuxt.config.js" />
         <option value="$PROJECT_DIR$/components/Tools.vue" />
-        <option value="$PROJECT_DIR$/components/Navigation.vue" />
         <option value="$PROJECT_DIR$/components/Card.vue" />
         <option value="$PROJECT_DIR$/components/Hero.vue" />
         <option value="$PROJECT_DIR$/assets/css/components/hero.css" />
@@ -190,6 +191,7 @@
         <option value="$PROJECT_DIR$/logo-orange.svg" />
         <option value="$PROJECT_DIR$/assets/css/components/footer.css" />
         <option value="$PROJECT_DIR$/components/FooterSection.vue" />
+        <option value="$PROJECT_DIR$/components/Navigation.vue" />
       </list>
     </option>
   </component>
@@ -236,7 +238,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="footer&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/footer.css&#10;footer.cs&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/footer.css&#10;Footer&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/FooterSection.vue&#10;mixin&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/plugins/mixins.js&#10;fetchA&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;index.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/pages/index.vue&#10;hero.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/hero.css&#10;Hero&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Hero.vue&#10;Card.v&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Card.vue&#10;footer.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/FooterSection.vue&#10;footer.css&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/footer.css&#10;Navig&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Navigation.vue&#10;index&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/pages/index.vue&#10;f&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;fet&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;Navi&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Navigation.vue&#10;NAvi&#9;null&#9;null&#10;Nav&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Navigation.vue&#10;nuxt&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/nuxt.config.js&#10;fetc&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;deetoo&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/store/deetoo.js&#10;FooterSection&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/FooterSection.vue&#10;Hero.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Hero.vue" />
+    <property name="SearchEverywhereHistoryKey" value="Nav&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Navigation.vue&#10;footer&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/footer.css&#10;footer.cs&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/footer.css&#10;Footer&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/FooterSection.vue&#10;mixin&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/plugins/mixins.js&#10;fetchA&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;index.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/pages/index.vue&#10;hero.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/hero.css&#10;Hero&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Hero.vue&#10;Card.v&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Card.vue&#10;footer.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/FooterSection.vue&#10;footer.css&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/assets/css/components/footer.css&#10;Navig&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Navigation.vue&#10;index&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/pages/index.vue&#10;f&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;fet&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;Navi&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Navigation.vue&#10;NAvi&#9;null&#9;null&#10;nuxt&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/nuxt.config.js&#10;fetc&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/gql/fetchAll.js&#10;deetoo&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/store/deetoo.js&#10;FooterSection&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/FooterSection.vue&#10;Hero.&#9;FILE&#9;file:///Users/jordandobrev/Code/bdmlr/components/Hero.vue" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -278,12 +280,12 @@
       <workItem from="1541442572887" duration="6921000" />
       <workItem from="1541512838011" duration="834000" />
       <workItem from="1541618235530" duration="3195000" />
-      <workItem from="1541670951388" duration="8843000" />
+      <workItem from="1541670951388" duration="12759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27933000" />
+    <option name="totallyTimeSpent" value="31849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3840" y="23" width="1920" height="1057" extended-state="6" />
@@ -465,13 +467,6 @@
     <entry file="file://$PROJECT_DIR$/assets/css/components/container.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/deetoo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -525,13 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Navigation.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -631,17 +619,31 @@
     <entry file="file://$PROJECT_DIR$/assets/css/components/footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/FooterSection.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+        <state relative-caret-position="210">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#1;n#div#1;n#div#0;n#div#0;n#footer#0;n#template#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Navigation.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
         </state>
       </provider>
     </entry>
