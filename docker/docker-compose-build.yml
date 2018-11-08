@@ -2,7 +2,7 @@ version: '3'
 
 services:
     app:
-        image: bdmlr/app:bdmlr-${CIRCLE_SHA1}
+        image: deetoo/app:bdmlr-${CIRCLE_SHA1}
         build:
           context: ../
           dockerfile: ./docker/app.Dockerfile
