@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    image: bdmlr/app:bdmlr-${TAG}
+    environment:
+      - NODE_ENV=production
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    networks:
+      - bdmlr-overlay
+networks:
+  bdmlr-overlay:
+    external:
+      name: bdmlr-overlay

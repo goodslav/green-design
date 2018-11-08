@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  frontend_build:
+    docker:
+      - image: node:8.11.3
+    working_directory: ~/project
+    steps:
+      - checkout:
+          path: ~/project
+      - restore_cache: # special step to restore the dependency cache if `package.json` does not change
+          keys:
+            - node-v1-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found (See https://circleci.com/docs/2.0/caching/)
+            - node-v1-
+      - run: npm install
+      - run: npm run build
+      - save_cache: # special step to save the dependency cache with the `package.json` cache key template
+          key: node-v1-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - dist
+  deploy:
+    machine:
+        enabled: true
+    working_directory: ~/project
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Deploy To Docker Hub
+          command: |
+            echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+            docker-compose -f docker/docker-compose-build.yml build
+            docker-compose -f docker/docker-compose-build.yml bundle --push-images
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - frontend_build
+      - deploy:
+          requires:
+            - frontend_build
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - /^feature-.*/
+                - /^rc-.*/
