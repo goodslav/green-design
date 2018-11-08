@@ -10,8 +10,8 @@ services:
       restart_policy:
         condition: on-failure
     networks:
-      - bdmlr-overlay
+      - deetoo-overlay
 networks:
-  bdmlr-overlay:
+  deetoo-overlay:
     external:
-      name: bdmlr-overlay
+      name: deetoo-overlay
