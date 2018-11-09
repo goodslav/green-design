@@ -10,4 +10,28 @@ npm-debug.log
 # Nuxt generate
 dist
 
+# yarn and custom rules
+yarn-error.log
+.DS_Store
+
+# php storm
+.idea/*
+!.idea/codeStyleSettings.xml
+!.idea/codeStyles/codeStyleConfig.xml
+!.idea/codeStyles/Project.xml
+!.idea/codeStyles/codeStyleSettings.xml
+
 .history
+
+# env
+.env
+
+# sublime
+*.sublime-project
+*.sublime-workspace
+
+#pwa
+sw.*
+static/manifest*.json
+static/sw.js
+static/workbox-sw*.js

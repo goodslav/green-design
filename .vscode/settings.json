@@ -1,2 +1,7 @@
 {
+    "settings": {
+        "eslint.options": {
+            "configFile": ".eslintrc.js"
+        }
+    }
 }
