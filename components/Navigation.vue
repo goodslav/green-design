@@ -1,16 +1,9 @@
 <template>
     <nav class="main-nav">
         <div class="nav-links">
-            <a
-                href="#News"
-                v-smooth-scroll="{ duration : 2000 }"
-            >News</a>
-            <a
-                href="#Who-Are-We"
-            >Join Us</a>
-            <a
-                href="#Contact-Us"
-            >Training</a>
+            <a href="#News" v-smooth-scroll="{ duration : 2000 }">News</a>
+            <a href="#Who-Are-We">Join Us</a>
+            <a href="#Contact-Us">Training</a>
         </div>
         <div class="logo">
             <a href="#">
@@ -23,27 +16,20 @@
             </a>
         </div>
         <div class="nav-links justify-end">
-            <a
-                href="#Products"
-            >How You Can Help</a>
-            <a
-                href="#Who-Are-We"
-            >Donate</a>
-            <a
-                href="#Contact-Us"
-            >Contact Us</a>
+            <a href="#Products">How You Can Help</a>
+            <a href="#Who-Are-We">Donate</a>
+            <a href="#Contact-Us">Contact Us</a>
         </div>
-
-        <div
-            class="hamburger"
-            @click="visible = !visible"
-        >
+        <div class="hamburger" @click="visible = !visible">
             <div class="w-full"></div>
             <div class="w-3/4"></div>
             <div class="w-1/2"></div>
         </div>
-
-        <div class="mobile-links" v-if="visible" @click="visible = !visible">
+        <div
+            class="mobile-links"
+            v-if="visible"
+            @click="visible = !visible"
+        >
             <a href="#News">News</a>
             <a href="#Who-Are-We">Join Us</a>
             <a href="#Contact-Us">Training</a>
@@ -89,7 +75,7 @@ export default {
 <style>
 .main-nav {
     @apply flex w-full fixed pin-t z-50 justify-between items-center h-16 px-2;
-    background: rgba(255,255,255,0.75);
+    background: rgba(255, 255, 255, 0.75);
 }
 
 .logo {

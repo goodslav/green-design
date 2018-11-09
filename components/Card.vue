@@ -1,5 +1,7 @@
 <template>
-    <div class="rounded overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6">
+    <div
+        class="rounded overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6"
+    >
         <img
             class="w-full"
             src="https://tailwindcss.com/img/card-top.jpg"
@@ -15,19 +17,13 @@
         <div class="px-6 py-4">
             <span
                 class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-normal text-grey-darker mr-2"
-            >
-                #photography
-            </span>
+            >#photography</span>
             <span
                 class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-normal text-grey-darker mr-2"
-            >
-                #travel
-            </span>
+            >#travel</span>
             <span
                 class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-normal text-grey-darker"
-            >
-                #winter
-            </span>
+            >#winter</span>
         </div>
     </div>
 </template>

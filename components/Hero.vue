@@ -1,22 +1,21 @@
 <template>
     <section class="min-h-screen">
         <div>
-            <div
-                class="w-full h-full z-20 absolute pin-t lg:px-32 px-4 text-white text-blue-lightest text-center flex
-                items-center justify-center text-shadow--hero subpixel-antialiased">
+            <div class="d2-hero-title">
                 <div>
-                    <h1 class="text-5xl mb-12 font-semibold">British Divers Marine Life Rescue</h1>
+                    <h1
+                        class="text-5xl mb-12 font-semibold"
+                    >British Divers Marine Life Rescue</h1>
                     <h3 class="text-xl font-normal leading-normal">
                         BDMLR is an organisation dedicated to the rescue and well-being of all marine animals in
                         distress around the UK.
                     </h3>
-                    <button
-                        class="hero-button">
-                        Become a Medic
-                    </button>
+                    <button class="hero-button">Become a Medic</button>
                 </div>
             </div>
-            <div class="w-full h-full z-10 absolute pin-t bg-cover bg-black opacity-50"></div>
+            <div
+                class="w-full h-full z-10 absolute pin-t bg-cover bg-black opacity-50"
+            ></div>
             <transition-group
                 name="fadeHero"
                 mode="out-in"
@@ -33,10 +32,6 @@
                 />
             </transition-group>
         </div>
-        <img
-            class="d2-hero-image slideUp slideUp--delay-3 hidden"
-            src="~/assets/images/sections/hero_developers.svg"
-        />
     </section>
 </template>
 

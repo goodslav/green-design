@@ -1,8 +1,14 @@
+.d2-hero-title {
+    @apply w-full h-full absolute pin-t flex items-center justify-center;
+    @apply lg:px-32 px-4 z-20;
+    @apply text-white text-blue-lightest text-center text-shadow--hero subpixel-antialiased;
+}
+
 .hero-button {
     @apply text-blue-lighter font-semibold py-4 px-6 rounded-full shadow text-base mt-12 leading-none;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-button:hover {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }

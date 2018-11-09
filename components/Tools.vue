@@ -7,16 +7,17 @@
             :style="getStyle(article)"
         >
             <div class="image-card text-shadow">
-                <h3 class="text-2xl font-bold mb-4 text-blue-lightest">
-                    {{ article.title }}
-                </h3>
+                <h3
+                    class="text-2xl font-bold mb-4 text-blue-lightest"
+                >{{ article.title }}</h3>
                 <h5
                     class="text-sm flex-grow leading-normal font-medium mb-8"
                     v-html="article.description"
                 ></h5>
-                <a href="#" class="text-base no-underline text-blue-lighter font-semibold">
-                    Learn More
-                </a>
+                <a
+                    href="#"
+                    class="text-base no-underline text-blue-lighter font-semibold"
+                >Learn More</a>
             </div>
         </a>
     </section>

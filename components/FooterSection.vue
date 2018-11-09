@@ -1,6 +1,8 @@
 <template>
     <footer>
-        <div class="flex flex-wrap container p-4 w-full bg-blue-dark text-blue-lighter text-shadow--text">
+        <div
+            class="flex flex-wrap container p-4 w-full bg-blue-dark text-blue-lighter text-shadow--text"
+        >
             <div class="w-full lg:w-2/5 p-4">
                 <div class="mb-4 items-center flex">
                     <img
@@ -10,23 +12,24 @@
                         class="w-16 mr-4"
                         data-fade-offset="-600"
                     >
-                    <h4 class="text-2xl font-semibold leading-tight mb-0">
-                        British Divers<br />
-                        Marine Life Rescue
+                    <h4
+                        class="text-2xl font-semibold leading-tight mb-0"
+                    >British Divers
+                        <br>Marine Life Rescue
                     </h4>
                 </div>
                 <p class="text-blue-light italic text-sm mb-2">
                     Sed aliquam lacus id orci egestas scelerisque. Ut lobortis varius turpis, ac interdum leo posuere
                     vitae.
                 </p>
-
                 <div class="text-base flex flex-wrap items-center">
                     <a
                         href="mailto:info@bdmlr.org.uk"
                         class="text-orange-light hover:text-orange-lighter mr-2"
-                    >info@bdmlr.org.uk
-                    </a>
-                    <span class="flex-no-shrink sm:border-l border-blue-light sm:pl-2 my-2">
+                    >info@bdmlr.org.uk</a>
+                    <span
+                        class="flex-no-shrink sm:border-l border-blue-light sm:pl-2 my-2"
+                    >
                         Proudly created by
                         <a
                             href="https://www.deetoo.co.uk/"
@@ -38,7 +41,7 @@
                                 title="DeeToo Logo"
                                 alt="DeeToo company logo"
                                 style="height: 14px;"
-                            />
+                            >
                         </a>
                     </span>
                 </div>
@@ -66,20 +69,30 @@
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
                 <h5>Rescue Hotline</h5>
                 <div class="mb-2">
-                    <a href="tel:01825765546" class="text-orange hover:text-orange-light text-xl">01825 765 546</a>
-                    <h4 class="text-base font-normal">Monday-Friday 9am-5pm</h4>
+                    <a
+                        href="tel:01825765546"
+                        class="text-orange hover:text-orange-light text-xl"
+                    >01825 765 546</a>
+                    <h4
+                        class="text-base font-normal"
+                    >Monday-Friday 9am-5pm</h4>
                 </div>
                 <div>
-                    <a href="tel:07787433412" class="text-orange hover:text-orange-light text-xl">07787 433 412</a>
-                    <h4 class="text-base font-normal">Out of office hours</h4>
+                    <a
+                        href="tel:07787433412"
+                        class="text-orange hover:text-orange-light text-xl"
+                    >07787 433 412</a>
+                    <h4
+                        class="text-base font-normal"
+                    >Out of office hours</h4>
                 </div>
             </div>
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
                 <h5>Address</h5>
-
                 <address
                     class="text-sm leading-normal whitespace-pre-line mb-4"
-                >Lime House Regency Close
+                >
+                    Lime House Regency Close
                     Uckfield
                     East Sussex
                     TN22 1DS
@@ -87,8 +100,9 @@
                 </address>
             </div>
         </div>
-
-        <div class="w-full p-4 text-blue-lightest text-center text-xs bg-blue-darker leading-normal">
+        <div
+            class="w-full p-4 text-blue-lightest text-center text-xs bg-blue-darker leading-normal"
+        >
             © 2004-2018 British Divers Marine Life Rescue | Dedicated to the rescue of marine life | Registered
             Charity England and Wales no 803438. Scottish Charity no SC039304
         </div>

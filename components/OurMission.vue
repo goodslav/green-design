@@ -1,24 +1,43 @@
 <template>
     <section class="flex flex-wrap">
-        <div class="w-full lg:w-2/3 bg-cover bg-center" :style="getStyle(ourMission)">
-            <div class="bg-blue-lightest px-16 py-24 h-full w-full" style="opacity: 0.95">
-                <h2 class="text-3xl font-bold mb-8">{{ ourMission.title }}</h2>
-                <h3 class="text-base font-normal leading-loose italic mb-6" v-html="ourMission.description"></h3>
+        <div
+            class="w-full lg:w-2/3 bg-cover bg-center"
+            :style="getStyle(ourMission)"
+        >
+            <div
+                class="bg-blue-lightest px-16 py-24 h-full w-full"
+                style="opacity: 0.95"
+            >
+                <h2
+                    class="text-3xl font-bold mb-8"
+                >{{ ourMission.title }}</h2>
+                <h3
+                    class="text-base font-normal leading-loose italic mb-6"
+                    v-html="ourMission.description"
+                ></h3>
                 <button
-                    class="bg-blue hover:bg-blue-dark text-white py-2 px-4 rounded-full text-base font-normal leading-normal">
-                    Learn More
-                </button>
+                    class="bg-blue hover:bg-blue-dark text-white py-2 px-4 rounded-full text-base font-normal leading-normal"
+                >Learn More</button>
             </div>
         </div>
-        <div class="w-full lg:w-1/3 text-teal-lightest bg-cover bg-center" :style="getStyle(becomeAHero)">
-            <div class="bg-teal-dark px-10 py-24 h-full w-full" style="opacity: 0.95">
-                <h2 class="text-3xl font-bold mb-8">{{ becomeAHero.title }}</h2>
-                <h3 class="text-base font-normal leading-loose italic mb-6" v-html="becomeAHero.description"></h3>
-
+        <div
+            class="w-full lg:w-1/3 text-teal-lightest bg-cover bg-center"
+            :style="getStyle(becomeAHero)"
+        >
+            <div
+                class="bg-teal-dark px-10 py-24 h-full w-full"
+                style="opacity: 0.95"
+            >
+                <h2
+                    class="text-3xl font-bold mb-8"
+                >{{ becomeAHero.title }}</h2>
+                <h3
+                    class="text-base font-normal leading-loose italic mb-6"
+                    v-html="becomeAHero.description"
+                ></h3>
                 <button
-                    class="bg-teal hover:bg-teal-light text-teal-lightest py-2 px-4 rounded-full text-base font-normal leading-normal">
-                    Apply Now
-                </button>
+                    class="bg-teal hover:bg-teal-light text-teal-lightest py-2 px-4 rounded-full text-base font-normal leading-normal"
+                >Apply Now</button>
             </div>
         </div>
     </section>
