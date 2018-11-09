@@ -1,7 +1,7 @@
 <template>
     <div class="section-news">
         <h3
-            class="text-white text-center pt-16 text-4xl text-shadow font-semibold"
+            class="text-center pt-16 text-4xl text-shadow font-semibold"
         >Latest News</h3>
         <div class="flex flex-wrap justify-center py-6">
             <div
@@ -62,12 +62,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.section-news {
-    background: linear-gradient(to right, #5b827a 0%, #80785e 50%, #805d66 100%);
-    backface-visibility: hidden;
-    transform: scale(1) translateY(0px);
-    opacity: 1;
-}
-</style>
