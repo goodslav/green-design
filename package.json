@@ -25,7 +25,7 @@
         "date-fns": "^1.29.0",
         "ks-vue-scrollmagic": "^1.0.2",
         "lodash": "^4.17.10",
-        "nuxt": "^2.2.0",
+        "nuxt": "2.1.0",
         "qonfucius-nuxt-fontawesome": "0.0.3",
         "strapi-sdk-javascript": "^0.2.1",
         "vue-smooth-scroll": "^1.0.13",

@@ -1,7 +1,13 @@
 .d2-hero-title {
     @apply w-full h-full absolute pin-t flex items-center justify-center;
-    @apply lg:px-32 px-4 z-20;
-    @apply text-white text-blue-lightest text-center text-shadow--hero subpixel-antialiased;
+    @apply px-4 z-20;
+    @apply text-white text-blue-lightest text-center subpixel-antialiased;
+}
+
+@screen lg {
+    .d2-hero-title {
+        @apply px-32;
+    }
 }
 
 .hero-button {

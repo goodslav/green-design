@@ -1,7 +1,7 @@
 <template>
     <section class="min-h-screen">
         <div>
-            <div class="d2-hero-title">
+            <div class="d2-hero-title text-shadow--hero">
                 <div>
                     <h1
                         class="text-5xl mb-12 font-semibold"
