@@ -2,6 +2,7 @@
     @apply w-full h-full absolute pin-t flex items-center justify-center;
     @apply px-4 z-20;
     @apply text-white text-blue-lightest text-center subpixel-antialiased;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.45) 100%);
 }
 
 @screen lg {
@@ -11,10 +12,12 @@
 }
 
 .hero-button {
-    @apply text-blue-lighter font-semibold py-4 px-6 rounded-full shadow text-base mt-12 leading-none;
-    background: rgba(0, 0, 0, 0.5);
+    @apply bg-sunset-navy-darkest text-white font-semibold py-4 px-6 rounded-full text-base mt-12 leading-none;
+    transition: all 0.25s ease-in-out;
 }
 
 .hero-button:hover {
-    background: rgba(0, 0, 0, 0.6);
+    @apply bg-sunset-navy;
+    box-shadow: 0 0 12px 4px rgba(153, 192, 220, 0.2);
+    opacity: 0.9;
 }

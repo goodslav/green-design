@@ -6,18 +6,15 @@
             v-for="article in myArticles"
             :style="getStyle(article)"
         >
-            <div class="image-card text-shadow">
+            <div class="image-card">
                 <h3
-                    class="text-2xl font-bold mb-4 text-blue-lightest"
+                    class="text-2xl font-bold mb-4 text-sunset-blue-lightest"
                 >{{ article.title }}</h3>
                 <h5
                     class="text-sm flex-grow leading-normal font-medium mb-8"
                     v-html="article.description"
                 ></h5>
-                <a
-                    href="#"
-                    class="text-base no-underline text-blue-lighter font-semibold"
-                >Learn More</a>
+                <a href="#" class="section-tools__link">Learn More</a>
             </div>
         </a>
     </section>
@@ -53,6 +50,7 @@ export default {
 .image-card {
     @apply flex
     flex-col w-full h-full text-white px-8 py-24;
+    text-shadow: 1px 2px 2px rgba(34, 77, 116, 0.5);
     background: rgba(0, 0, 0, 0.6);
     transition: all 0.5s;
 }
@@ -60,5 +58,15 @@ export default {
 .image-card:hover {
     @apply pb-32 pt-16;
     background: rgba(0, 0, 0, 0.5);
+}
+
+.section-tools__link {
+    @apply no-underline text-teal font-semibold;
+    text-shadow: 1px 2px 2px rgba(34, 77, 116, 0.5);
+    transition: all 0.25s ease-in-out;
+}
+
+.section-tools__link:hover {
+    @apply text-teal-lighter;
 }
 </style>

@@ -45,6 +45,37 @@ View the full documentation at https://tailwindcss.com.
 const colors = {
     transparent: 'transparent',
 
+    'sunset-navy-darkest': '#1a0a1f',
+    'sunset-navy-darker': '#1b0e29',
+    'sunset-navy-dark': '#181232',
+    'sunset-navy': '#16193b',
+    'sunset-navy-light': '#536070',
+    'sunset-navy-lighter': '#91a1a5',
+    'sunset-navy-lightest': '#d0d9d7',
+
+    'sunset-blue-darkest': '#59396a',
+    'sunset-blue-darker': '#644d8b',
+    'sunset-blue-dark': '#6862ad',
+    'sunset-blue': '#7788cd',
+    'sunset-blue-light': '#99c0dc',
+    'sunset-blue-lighter': '#bde8ea',
+    'sunset-blue-lightest': '#e2f7f0',
+
+    'sunset-cyan': '#7a99cc',
+
+    'sunset-gray-dark': '#4b3f5b',
+    'sunset-gray': '#8196b3',
+    'sunset-gray-light': '#e5f1ea',
+    'sunset-gray-lighter': '#f5f9f3',
+
+    'sunset-bisque-darkest': '#58544d',
+    'sunset-bisque-darker': '#756c67',
+    'sunset-bisque-dark': '#928282',
+    'sunset-bisque': '#af9ca1',
+    'sunset-bisque-light': '#c5b6bf',
+    'sunset-bisque-lighter': '#dad0da',
+    'sunset-bisque-lightest': '#eeebef',
+
     black: '#22292f',
     'grey-darkest': '#3d4852',
     'grey-darker': '#606f7b',
@@ -87,13 +118,13 @@ const colors = {
     'green-lighter': '#a2f5bf',
     'green-lightest': '#e3fcec',
 
-    'teal-darkest': '#0d3331',
-    'teal-darker': '#20504f',
-    'teal-dark': '#38a89d',
-    teal: '#4dc0b5',
-    'teal-light': '#64d5ca',
-    'teal-lighter': '#a0f0ed',
-    'teal-lightest': '#e8fffe',
+    'teal-darkest': '#182858',
+    'teal-darker': '#224d74',
+    'teal-dark': '#2d7c8e',
+    teal: '#38a89d',
+    'teal-light': '#6ac299',
+    'teal-lighter': '#9fdaa8',
+    'teal-lightest': '#dbf0d5',
 
     'blue-darkest': '#12283a',
     'blue-darker': '#1c3d5a',

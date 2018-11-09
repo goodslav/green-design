@@ -1,6 +1,6 @@
 <template>
     <nav class="main-nav">
-        <div class="nav-links">
+        <div class="nav-links text-shadow--nav">
             <a href="#News" v-smooth-scroll="{ duration : 2000 }">News</a>
             <a href="#Who-Are-We">Join Us</a>
             <a href="#Contact-Us">Training</a>
@@ -15,7 +15,7 @@
                 >
             </a>
         </div>
-        <div class="nav-links justify-end">
+        <div class="nav-links justify-end text-shadow--nav">
             <a href="#Products">How You Can Help</a>
             <a href="#Who-Are-We">Donate</a>
             <a href="#Contact-Us">Contact Us</a>
@@ -75,7 +75,7 @@ export default {
 <style>
 .main-nav {
     @apply flex w-full fixed pin-t z-50 justify-between items-center h-16 px-2;
-    background: rgba(255, 255, 255, 0.75);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.65) 100%);
 }
 
 .logo {
@@ -87,7 +87,8 @@ export default {
 }
 
 .nav-links a {
-    @apply mx-2 px-2 no-underline text-blue-darker text-lg;
+    @apply mx-2 px-2 no-underline text-white text-lg;
+    transition: all 0.25s ease-in-out;
 }
 
 .nav-links a:hover {
@@ -101,6 +102,7 @@ export default {
 
 .mobile-links a {
     @apply mx-2 px-2 my-1 no-underline text-blue-darker text-lg text-xl leading-loose;
+    transition: all 0.25s ease-in-out;
 }
 
 .mobile-links a:hover {

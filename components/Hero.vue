@@ -13,9 +13,6 @@
                     <button class="hero-button">Become a Medic</button>
                 </div>
             </div>
-            <div
-                class="w-full h-full z-10 absolute pin-t bg-cover bg-black opacity-50"
-            ></div>
             <transition-group
                 name="fadeHero"
                 mode="out-in"

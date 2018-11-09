@@ -5,8 +5,7 @@
             :style="getStyle(ourMission)"
         >
             <div
-                class="bg-blue-lightest px-16 py-24 h-full w-full"
-                style="opacity: 0.95"
+                class="section-mission__subsection section-mission__subsection--dark"
             >
                 <h2
                     class="text-3xl font-bold mb-8"
@@ -16,17 +15,16 @@
                     v-html="ourMission.description"
                 ></h3>
                 <button
-                    class="bg-blue hover:bg-blue-dark text-white py-2 px-4 rounded-full text-base font-normal leading-normal"
+                    class="section-mission__button section-mission__button--dark"
                 >Learn More</button>
             </div>
         </div>
         <div
-            class="w-full lg:w-1/3 text-teal-lightest bg-cover bg-center"
+            class="w-full lg:w-1/3 text-white bg-cover bg-center"
             :style="getStyle(becomeAHero)"
         >
             <div
-                class="bg-teal-dark px-10 py-24 h-full w-full"
-                style="opacity: 0.95"
+                class="section-mission__subsection section-mission__subsection--light"
             >
                 <h2
                     class="text-3xl font-bold mb-8"
@@ -36,7 +34,7 @@
                     v-html="becomeAHero.description"
                 ></h3>
                 <button
-                    class="bg-teal hover:bg-teal-light text-teal-lightest py-2 px-4 rounded-full text-base font-normal leading-normal"
+                    class="section-mission__button section-mission__button--light"
                 >Apply Now</button>
             </div>
         </div>
@@ -72,3 +70,38 @@ export default {
     },
 };
 </script>
+
+<style>
+.section-mission__subsection {
+    @apply px-16 py-24 h-full w-full;
+    opacity: 0.95;
+}
+.section-mission__subsection--dark {
+    @apply bg-sunset-gray;
+    text-shadow: 1px 2px 2px rgba(75, 63, 91, 0.2);
+}
+.section-mission__subsection--light {
+    @apply bg-teal-dark;
+    text-shadow: 1px 2px 2px rgba(34, 77, 116, 0.3);
+}
+.section-mission__button {
+    @apply py-2 px-4 rounded-full text-base font-normal leading-normal;
+    transition: all 0.25s ease-in-out;
+}
+
+.section-mission__button--dark {
+    @apply bg-sunset-navy text-white;
+}
+
+.section-mission__button--dark:hover {
+    @apply bg-sunset-navy-light;
+}
+
+.section-mission__button--light {
+    @apply bg-sunset-bisque-darkest text-white;
+}
+
+.section-mission__button--light:hover {
+    @apply bg-sunset-bisque-darker;
+}
+</style>

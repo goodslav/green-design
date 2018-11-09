@@ -1,6 +1,6 @@
 <template>
     <div
-        class="rounded overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6"
+        class="bg-white overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6"
     >
         <img
             class="w-full"

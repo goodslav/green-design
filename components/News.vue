@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="section-news">
         <h3
-            class="text-center pt-16 text-3xl font-semibold"
+            class="text-white text-center pt-16 text-4xl text-shadow font-semibold"
         >Latest News</h3>
         <div class="flex flex-wrap justify-center py-6">
             <div
-                class="rounded overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6"
+                class="bg-sunset-gray-lighter overflow-hidden shadow-lg max-w-xs w-full my-6 mx-6"
                 v-for="article in myArticles"
             >
                 <a
@@ -62,3 +62,12 @@ export default {
     },
 };
 </script>
+
+<style>
+.section-news {
+    background: linear-gradient(to right, #5b827a 0%, #80785e 50%, #805d66 100%);
+    backface-visibility: hidden;
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+}
+</style>

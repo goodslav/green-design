@@ -2,6 +2,7 @@ module.exports = {
     plugins: [
         require('tailwindcss')('./tailwind.js'),
         require('postcss-preset-env')({
+            importFrom: './assets/css/components/variables.css',
             features: {
                 'nesting-rules': true,
                 'custom-media-queries': true,

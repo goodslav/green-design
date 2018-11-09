@@ -1,10 +1,10 @@
 footer a {
-    transition: all 0.3s;
-    @apply text-blue-light no-underline leading-normal;
+    transition: all 0.25s ease-in-out;
+    @apply text-sunset-cyan no-underline leading-normal;
 }
 
 footer a:hover {
-    @apply text-blue-lighter;
+    @apply text-sunset-blue-light;
 }
 
 footer ul {
@@ -12,11 +12,11 @@ footer ul {
 }
 
 footer h5 {
-    @apply mb-2 font-semibold text-xl border-orange border-b pb-1 inline-block;
+    @apply mb-2 font-semibold text-xl border-sunset-bisque-light border-b pb-1 inline-block;
 }
 
 footer ul li:before {
-    @apply mr-2 text-orange font-semibold;
+    @apply mr-2 text-sunset-bisque-light font-semibold;
     content: '>';
 }
 

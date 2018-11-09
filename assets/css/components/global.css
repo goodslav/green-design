@@ -12,6 +12,10 @@ body {
     font-family: 'Poppins', Helvetica, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
+.text-shadow--nav {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), 0 3px 7px rgba(0, 0, 0, 0.05);
+}
+
 .text-shadow--heading {
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
