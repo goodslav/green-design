@@ -2,6 +2,6 @@ const WebFont = require('webfontloader');
 
 WebFont.load({
     google: {
-        families: ['Montserrat:300,400,400i,600', 'Open Sans:400,600'],
+        families: ['Poppins:400,400i,500,500i,600,600i,700,700i'],
     },
 });

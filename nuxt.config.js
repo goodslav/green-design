@@ -2,26 +2,20 @@ require('dotenv').config();
 
 module.exports = {
     /*
-    ** Headers of the page
-    */
+     ** Headers of the page
+     */
     head: {
-        title: 'Deetoo Ltd.',
+        title: 'BDMLR',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             {
                 hid: 'description',
                 name: 'description',
-                content: 'Static website page for DeeToo Ltd. generated with Nuxt',
+                content: 'Website page for BDMLR',
             },
         ],
-        link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            {
-                rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i',
-            },
-        ],
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     env: {
         API_URL: process.env.API_URL || 'https://constructor.deetoo.co.uk/graphql',
@@ -29,12 +23,12 @@ module.exports = {
         NODE_ENV: process.env.NODE_ENV || 'development',
     },
     /*
-    ** Customize the progress bar color
-    */
+     ** Customize the progress bar color
+     */
     loading: { color: '#3B8070' },
     /*
-    ** Build configuration
-    */
+     ** Build configuration
+     */
     build: {
         extractCSS: true,
         optimization: {
@@ -50,8 +44,8 @@ module.exports = {
             },
         },
         /*
-        ** Run ESLint on save
-        */
+         ** Run ESLint on save
+         */
         extend(config, { isDev, isClient }) {
             config.resolve.alias.vue = 'vue/dist/vue.common';
 

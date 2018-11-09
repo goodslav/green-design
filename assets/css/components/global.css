@@ -7,8 +7,9 @@ html {
     overflow-x: hidden;
 }
 
-html, body {
-    font-family: 'Poppins', sans-serif;
+html,
+body {
+    font-family: 'Poppins', Helvetica, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .text-shadow--heading {
