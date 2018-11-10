@@ -1,10 +1,15 @@
 <template>
-    <div class="section-news relative" :style="getStyle(latestNews)">
+    <article
+        class="section-news relative"
+        :style="getStyle(latestNews)"
+    >
         <div class="section-news__overlay"></div>
         <h3
             class="text-center pt-16 text-4xl text-shadow text-white font-semibold relative z-10"
         >Latest News</h3>
-        <div class="flex flex-wrap justify-center py-6 relative z-10">
+        <article
+            class="flex flex-wrap justify-center py-6 relative z-10"
+        >
             <figure
                 class="relative overflow-hidden shadow-lg max-w-sm w-full my-6 mx-6"
                 v-for="article in myArticles"
@@ -31,8 +36,8 @@
                     </div>
                 </figcaption>
             </figure>
-        </div>
-    </div>
+        </article>
+    </article>
 </template>
 
 <script>
