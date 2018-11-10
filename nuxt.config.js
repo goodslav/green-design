@@ -38,6 +38,8 @@ module.exports = {
                         name: 'styles',
                         test: /\.(css|vue)$/,
                         chunks: 'all',
+                        minChunks: 1,
+                        reuseExistingChunk: true,
                         enforce: true,
                     },
                 },
