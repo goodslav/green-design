@@ -48,8 +48,7 @@ export default {
 
 <style>
 .image-card {
-    @apply flex
-    flex-col w-full h-full text-white px-8 py-24;
+    @apply flex flex-col w-full h-full text-white px-8 py-24;
     text-shadow: 1px 2px 2px rgba(34, 77, 116, 0.5);
     background: rgba(0, 0, 0, 0.6);
     transition: all 0.5s;
@@ -61,12 +60,12 @@ export default {
 }
 
 .section-tools__link {
-    @apply no-underline text-teal font-semibold;
+    @apply no-underline text-sunset-cyan font-semibold;
     text-shadow: 1px 2px 2px rgba(34, 77, 116, 0.5);
     transition: all 0.25s ease-in-out;
 }
 
 .section-tools__link:hover {
-    @apply text-teal-lighter;
+    @apply text-sunset-blue-light;
 }
 </style>

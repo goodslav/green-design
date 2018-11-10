@@ -16,7 +16,7 @@
                         <br>Marine Life Rescue
                     </h4>
                 </div>
-                <p class="text-blue-light italic text-sm mb-2">
+                <p class="italic text-sm mb-2">
                     Sed aliquam lacus id orci egestas scelerisque. Ut lobortis varius turpis, ac interdum leo posuere
                     vitae.
                 </p>
