@@ -4,9 +4,11 @@
             <div class="d2-hero-title text-shadow--hero">
                 <div>
                     <h1
-                        class="text-5xl mb-12 font-semibold"
+                        class="md:text-5xl text-3xl mb-12 font-semibold"
                     >British Divers Marine Life Rescue</h1>
-                    <h3 class="text-xl font-normal leading-normal">
+                    <h3
+                        class="md:text-xl text-lg font-normal leading-normal"
+                    >
                         BDMLR is an organisation dedicated to the rescue and well-being of all marine animals in
                         distress around the UK.
                     </h3>

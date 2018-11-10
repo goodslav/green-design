@@ -97,11 +97,11 @@ export default {
 
 .mobile-links {
     @apply fixed pin w-full h-screen flex flex-col items-center justify-center z-40;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .mobile-links a {
-    @apply mx-2 px-2 my-1 no-underline text-blue-darker text-lg text-xl leading-loose;
+    @apply mx-2 px-2 my-1 no-underline text-white text-lg text-xl leading-loose;
     transition: all 0.25s ease-in-out;
 }
 
@@ -115,7 +115,7 @@ export default {
 }
 
 .hamburger > div {
-    @apply h-1 bg-blue-darker rounded-full;
+    @apply h-1 bg-white rounded-full;
 }
 
 @screen xl {

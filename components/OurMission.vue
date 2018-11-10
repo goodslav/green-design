@@ -27,7 +27,7 @@
                 class="section-mission__subsection section-mission__subsection--light"
             >
                 <h2
-                    class="text-3xl font-bold mb-8"
+                    class="text-3xl font-bold mb-8 text-sunset-blue-lightest"
                 >{{ becomeAHero.title }}</h2>
                 <h3
                     class="text-base font-normal leading-loose italic mb-6"

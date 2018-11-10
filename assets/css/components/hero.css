@@ -1,8 +1,14 @@
 .d2-hero-title {
     @apply w-full h-full absolute pin-t flex items-center justify-center;
-    @apply px-4 z-20;
+    @apply px-4 pt-8 z-20;
     @apply text-white text-blue-lightest text-center subpixel-antialiased;
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+@screen md {
+    .d2-hero-title {
+        @apply pt-0;
+    }
 }
 
 @screen lg {

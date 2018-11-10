@@ -11,7 +11,7 @@
                         data-fade-offset="-600"
                     >
                     <h4
-                        class="text-2xl font-semibold leading-tight mb-0"
+                        class="text-2xl text-white font-semibold leading-tight mb-0"
                     >British Divers
                         <br>Marine Life Rescue
                     </h4>
@@ -26,13 +26,13 @@
                         class="text-sunset-bisque-light hover:text-orange-lighter mr-2"
                     >info@bdmlr.org.uk</a>
                     <span
-                        class="flex-no-shrink sm:border-l border-blue-light sm:pl-2 my-2"
+                        class="flex items-center flex-no-shrink sm:border-l border-blue-light sm:pl-2 my-2 text-white"
                     >
-                        Proudly created by
+                        <span>Proudly created by</span>
                         <a
                             href="https://www.deetoo.co.uk/"
                             target="_blank"
-                            class="deetoo__logo inline-block"
+                            class="deetoo__logo inline-block ml-2"
                         >
                             <img
                                 src="https://s3.eu-west-2.amazonaws.com/deetoo-uk/art/logo-blue.svg"
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
-                <h5>Links</h5>
+                <h5 class="text-white">Links</h5>
                 <ul>
                     <li>
                         <a href="#">Join Us</a>
@@ -65,11 +65,11 @@
                 </ul>
             </div>
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
-                <h5>Rescue Hotline</h5>
+                <h5 class="text-white">Rescue Hotline</h5>
                 <div class="mb-2">
                     <a
                         href="tel:01825765546"
-                        class="text-sunset-bisque-light hover:text-orange-light text-xl"
+                        class="text-sunset-bisque-light hover:text-orange-lighter text-xl"
                     >01825 765 546</a>
                     <h4
                         class="text-base font-normal"
@@ -78,7 +78,7 @@
                 <div>
                     <a
                         href="tel:07787433412"
-                        class="text-sunset-bisque-light hover:text-orange-light text-xl"
+                        class="text-sunset-bisque-light hover:text-orange-lighter text-xl"
                     >07787 433 412</a>
                     <h4
                         class="text-base font-normal"
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/3 lg:w-1/5 p-4">
-                <h5>Address</h5>
+                <h5 class="text-white">Address</h5>
                 <address
                     class="text-sm leading-normal whitespace-pre-line mb-4"
                 >
