@@ -89,8 +89,7 @@
                 <h5 class="text-white">Address</h5>
                 <address
                     class="text-sm leading-normal whitespace-pre-line mb-4"
-                >
-                    Lime House Regency Close
+                >Lime House Regency Close
                     Uckfield
                     East Sussex
                     TN22 1DS
@@ -127,6 +126,6 @@ export default {
 }
 
 .section-footer__copyright {
-    @apply w-full p-4 text-blue-lightest text-center text-xs bg-sunset-navy-darker leading-normal;
+    @apply w-full p-4 text-blue-lightest text-center text-xs bg-black leading-normal;
 }
 </style>

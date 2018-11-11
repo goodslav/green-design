@@ -73,9 +73,16 @@ export default {
 
 <style>
 .section-mission__subsection {
-    @apply px-16 py-24 h-full w-full;
+    @apply px-8 py-12 h-full w-full;
     opacity: 0.95;
 }
+
+@screen lg {
+    .section-mission__subsection {
+        @apply px-16 py-24;
+    }
+}
+
 .section-mission__subsection--dark {
     @apply bg-sunset-gray;
     text-shadow: 1px 2px 2px rgba(75, 63, 91, 0.2);

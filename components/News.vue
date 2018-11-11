@@ -8,15 +8,15 @@
             class="text-center pt-16 text-4xl text-shadow text-white font-semibold relative z-10"
         >Latest News</h3>
         <article
-            class="flex flex-wrap justify-center py-6 relative z-10"
+            class="flex flex-wrap justify-center py-12 px-6"
         >
             <figure
-                class="relative overflow-hidden shadow-lg max-w-sm w-full my-6 mx-6"
+                class="shadow-lg md:max-w-md w-full my-4 mx-4 flex flex-col sm:flex-row"
                 v-for="article in myArticles"
             >
                 <div class="media" :style="getStyle(article)"></div>
-                <figcaption>
-                    <header class="p-6">
+                <figcaption class="w-auto flex-grow">
+                    <header>
                         <h3
                             class="text-sunset-blue-lightest font-normal text-xl mb-4"
                         >{{ article.title }}</h3>
@@ -77,29 +77,33 @@ export default {
     @apply w-full bg-cover bg-center;
 
     & .media {
-        @apply absolute bg-cover bg-center overflow-hidden w-full h-full mt-0;
+        @apply bg-cover bg-center w-full h-64 flex-no-shrink;
         transition: all 0.25s ease;
         zoom: 1;
     }
 
-    & figure {
-        @apply overflow-hidden relative;
-        height: 370px;
+    @screen sm {
+        & .media {
+            @apply w-48 h-full;
+        }
 
-        &:hover .media {
-            transform: scale(1.25);
+        & figure {
+            &:hover .media {
+                transform: scale(1.15);
+            }
         }
     }
 
+    & figure {
+        @apply overflow-hidden relative;
+    }
+
     & figcaption {
-        @apply absolute pin-l pin-t m-6 rounded bg-blue-darkest;
-        height: calc(100% - 3rem);
-        max-width: 250px;
-        opacity: 0.95;
+        @apply bg-blue-darkest p-5 z-20;
     }
 
     & .body {
-        @apply absolute w-full pin-b p-6;
+        @apply w-full;
     }
 }
 
