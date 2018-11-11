@@ -31,7 +31,7 @@ module.exports = {
      */
     build: {
         extractCSS: true,
-        optimization: {
+        /* optimization: {
             splitChunks: {
                 cacheGroups: {
                     styles: {
@@ -44,7 +44,7 @@ module.exports = {
                     },
                 },
             },
-        },
+        }, */
         /*
          ** Run ESLint on save
          */
