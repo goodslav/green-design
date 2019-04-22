@@ -11,6 +11,7 @@ export const state = () => ({
     products: null,
 });
 
+/** @type {import('vuex').MutationTree<typeof state>} */
 export const mutations = {
     setArticles(state, articles) {
         state.articles = articles;
