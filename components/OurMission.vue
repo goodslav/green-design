@@ -1,41 +1,30 @@
 <template>
     <section class="flex flex-wrap">
         <div
-            class="w-full lg:w-2/3 bg-cover bg-center"
-            :style="getStyle(ourMission)"
-        >
-            <div
-                class="section-mission__subsection section-mission__subsection--dark"
-            >
-                <h2
-                    class="text-3xl font-bold mb-8"
-                >{{ ourMission.title }}</h2>
-                <h3
-                    class="text-base font-normal leading-loose italic mb-6"
-                    v-html="ourMission.description"
-                ></h3>
-                <button
-                    class="section-mission__button section-mission__button--dark"
-                >Learn More</button>
-            </div>
-        </div>
-        <div
-            class="w-full lg:w-1/3 text-white bg-cover bg-center"
+            class="w-full lg:w-1/2 text-white bg-cover bg-center"
             :style="getStyle(becomeAHero)"
         >
-            <div
-                class="section-mission__subsection section-mission__subsection--light"
-            >
-                <h2
-                    class="text-3xl font-bold mb-8 text-sunset-blue-lightest"
-                >{{ becomeAHero.title }}</h2>
+            <div class="section-mission__subsection section-mission__subsection--light">
+                <h2 class="text-3xl font-bold mb-8 text-sunset-blue-lightest">{{ becomeAHero.title }}</h2>
                 <h3
                     class="text-base font-normal leading-loose italic mb-6"
                     v-html="becomeAHero.description"
                 ></h3>
-                <button
-                    class="section-mission__button section-mission__button--light"
-                >Apply Now</button>
+                <button class="section-mission__button section-mission__button--light">Apply Now</button>
+            </div>
+        </div>
+
+        <div
+            class="w-full lg:w-1/2 bg-cover bg-center"
+            :style="getStyle(ourMission)"
+        >
+            <div class="section-mission__subsection section-mission__subsection--dark">
+                <h2 class="text-3xl font-bold mb-8">{{ ourMission.title }}</h2>
+                <h3
+                    class="text-base font-normal leading-loose italic mb-6"
+                    v-html="ourMission.description"
+                ></h3>
+                <button class="section-mission__button section-mission__button--dark">Learn More</button>
             </div>
         </div>
     </section>

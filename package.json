@@ -1,7 +1,7 @@
 {
-    "name": "deetoo-website",
+    "name": "green-design-website",
     "version": "1.1.0",
-    "description": "Static website page for DeeToo Ltd. generated with Nuxt",
+    "description": "Static website page for Green Design Ltd.",
     "author": "Slav Dachev <slav.dachev89@gmail.com>",
     "private": true,
     "scripts": {
