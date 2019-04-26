@@ -20,7 +20,6 @@
     bottom: 40px;
     width: 100%;
     text-align: center;
-    transform: translateX(-50%);
 }
 
 @media (min-width: 1200px) {

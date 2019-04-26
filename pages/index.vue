@@ -3,8 +3,8 @@
         <app-navigation/>
         <app-hero/>
         <services/>
-        <our-mission/>
         <app-tools/>
+        <our-mission/>
         <news/>
         <footer-section/>
     </div>
