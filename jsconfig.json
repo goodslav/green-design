@@ -1,0 +1,22 @@
+{
+    "include": ["./**/*"],
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "~/*": ["./*"],
+        "~components/*": ["./components/*"],
+        "~static/*": ["./static/*"],
+        "static/*": ["./static/*"],
+        "~assets/*": ["./assets/*"],
+        "assets/*": ["./assets/*"],
+        "~plugins/*": ["./plugins/*"],
+        "~pages/*": ["./pages/*"],
+        "~store/*": ["./.nuxt/store/*"],
+        "~router/*": ["./.nuxt/router/*"]
+      },
+      "moduleResolution": "node"
+    },
+    "typeAcquisition": {
+      "include": ["lodash"]
+    }
+  }

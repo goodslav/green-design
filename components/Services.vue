@@ -51,7 +51,7 @@
 
         <div class="w-full lg:w-1/2 bg-white bg-cover bg-center">
             <div class="section-mission__subsection section-mission__subsection--light">
-                <h2 class="text-3xl font-normal mb-8">{{ ourMission.title }}</h2>
+                <h2 class="text-3xl font-normal mb-8 text-black">{{ ourMission.title }}</h2>
                 <h3
                     class="text-base font-normal leading-loose italic mb-6"
                     v-html="ourMission.description"

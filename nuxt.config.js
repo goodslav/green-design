@@ -78,8 +78,8 @@ module.exports = {
                 componentName: 'fa-icon',
                 packs: [
                     {
-                        package: '@fortawesome/fontawesome-free-brands',
-                        icons: ['faGithub', 'faFontAwesome'],
+                        package: '@fortawesome/free-solid-svg-icons',
+                        icons: ['faHome', 'faPhone'],
                     },
                 ],
                 includeCss: true,

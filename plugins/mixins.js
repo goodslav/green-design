@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import {
     filter as _filter,
     find as _find,
+    first as _first,
     forEach as _forEach,
     forOwn as _forOwn,
     get as _get,
@@ -22,6 +23,7 @@ Vue.mixin({
     methods: {
         _filter,
         _find,
+        _first,
         _forEach,
         _forOwn,
         _get,
