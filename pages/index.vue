@@ -2,10 +2,10 @@
     <div>
         <app-navigation/>
         <app-hero/>
-        <services/>
+        <services ref="AboutUs"/>
         <app-tools/>
         <parallax/>
-        <contacts/>
+        <contacts ref="Contacts"/>
     </div>
 </template>
 
@@ -28,6 +28,27 @@ export default {
         AppTools,
         Services,
         Parallax,
+    },
+    watch: {
+        $route() {
+            this.scrollToHashTarget();
+        },
+    },
+    mounted() {
+        this.scrollToHashTarget();
+    },
+    methods: {
+        scrollToHashTarget() {
+            const targetRef = this._trimStart(this.$route.hash, '#');
+
+            if (targetRef) {
+                const target = this.$refs[targetRef].$el;
+
+                if (target) {
+                    this.$SmoothScroll(target, 500);
+                }
+            }
+        },
     },
 };
 </script>

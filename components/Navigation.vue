@@ -1,23 +1,20 @@
 <template>
     <nav class="main-nav">
         <div class="logo">
-            <a href="#">
+            <nuxt-link to="/">
                 <img
                     :src="logo.url"
                     :alt="logo.title"
                     :title="organization.name"
                     width="100%"
                 >
-            </a>
+            </nuxt-link>
         </div>
 
         <div class="nav-links justify-end text-shadow--nav">
-            <a href="#Products">За Нас</a>
-            <a
-                href="#Who-Are-We"
-                v-smooth-scroll="{ duration : 2000 }"
-            >Портфолио</a>
-            <a href="#Contact-Us">Контакти</a>
+            <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
+            <nuxt-link to="portfolio">Портфолио</nuxt-link>
+            <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
 
         <div
@@ -34,10 +31,10 @@
             v-if="visible"
             @click="visible = !visible"
         >
-            <a href="#Contact-Us">Начало</a>
-            <a href="#Products">Контакти</a>
-            <a href="#Who-Are-We">Портфолио</a>
-            <a href="#Contact-Us">Контакти</a>
+            <nuxt-link to="/">Начало</nuxt-link>
+            <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
+            <nuxt-link to="portfolio">Портфолио</nuxt-link>
+            <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
     </nav>
 </template>
@@ -76,7 +73,7 @@ export default {
 
 <style>
 .main-nav {
-    @apply flex w-full fixed pin-t z-50 justify-between items-center h-16 px-2;
+    @apply flex w-full sticky pin-t z-50 justify-between items-center h-16 px-2;
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0.85) 100%);
 }
 

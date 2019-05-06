@@ -1,5 +1,8 @@
 <template>
-    <section class="flex flex-wrap">
+    <section
+        class="flex flex-wrap"
+        id="Contact-Us"
+    >
         <div class="w-full lg:w-1/2 text-white bg-cover bg-center">
             <div class="h-full w-full">
                 <div
