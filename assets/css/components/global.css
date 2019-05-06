@@ -54,7 +54,7 @@ body {
 
     & > div {
         background: inherit;
-        width: 350px;
+        width: 300px;
         height: 100px;
         position: absolute;
         overflow: hidden;

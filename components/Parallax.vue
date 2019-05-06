@@ -8,7 +8,7 @@
             type="relative"
         >
             <div>
-                <span class="absolute w-full h-full text-shadow">PROJECTS</span>
+                <span class="absolute w-full h-full text-shadow uppercase">проекти</span>
             </div>
         </flux-parallax>
     </section>

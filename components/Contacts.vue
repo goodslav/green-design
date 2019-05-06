@@ -11,35 +11,37 @@
 
         <div class="w-full lg:w-1/2 bg-cover bg-center">
             <div class="section-contacts__subsection section-contacts__subsection--light bg-zuckerberg-backache">
-                <h2 class="text-3xl font-normal mb-24 text-black text-right">{{ contacts.title }}</h2>
+                <h2
+                    class="text-3xl font-normal mb-24 text-black text-center lg:justify-end lg:text-right w-full"
+                >Контактна информация</h2>
                 <!-- <h3
                     class="text-base font-normal leading-loose italic mb-6"
                     v-html="contacts.description"
                 ></h3>-->
-                <div class="text-base font-normal leading-loose mb-6">
-                    <div class="flex items-center flex-no-wrap justify-end -m-2">
+                <div class="text-base font-normal leading-loose w-full">
+                    <div class="flex items-center flex-no-wrap justify-center lg:justify-end -m-2 text-center">
                         <fa-icon
                             :icon="['fas', 'home']"
                             class="mx-2 text-black"
                         />
-                        <span class="mx-2">Address Formatted</span>
+                        <span class="mx-2">Адрес на офис сграда</span>
                     </div>
-                    <div class="flex items-center flex-no-wrap justify-end -m-2">
+                    <div class="flex items-center flex-no-wrap justify-center lg:justify-end -m-2 text-center">
                         <fa-icon
                             :icon="['fas', 'phone']"
                             class="mx-2 text-black"
                         />
                         <span class="mx-2">+1 (800) 123 1234, +1 (800) 123 1235</span>
                     </div>
-                    <div class="flex items-center flex-wrap justify-end text-base -m-4">
+                    <div class="flex items-center flex-wrap justify-center lg:justify-end text-base -m-4">
                         <a
                             href="mailto:info@green-design.bg"
-                            class="no-underline text-sunset-cyan hover:text-sunset-blue-light font-semibold mx-2 my-6"
+                            class="no-underline text-sunset-cyan hover:text-sunset-blue-light font-semibold mx-2 my-4"
                         >info@green-design.bg</a>
                         <span
-                            class="flex items-center flex-no-shrink sm:border-l border-blue-light sm:pl-3 mx-2 my-6"
+                            class="flex items-center justify-center flex-wrap sm:border-l border-blue-light sm:pl-3 mx-2"
                         >
-                            <span>Proudly created by</span>
+                            <span>Cъздаденo благодарение на</span>
                             <a
                                 href="https://www.deetoo.co.uk/"
                                 target="_blank"
@@ -55,7 +57,7 @@
                         </span>
                     </div>
 
-                    <div class="section-contacts__copyright">© 2019 Зелен Дизайн ООД</div>
+                    <div class="section-contacts__copyright lg:justify-end lg:text-right">© 2019 Зелен Дизайн ООД</div>
                 </div>
             </div>
         </div>
@@ -114,16 +116,16 @@ export default {
 }
 
 .section-contacts__subsection {
-    @apply px-8 py-12 h-full w-full;
+    @apply flex flex-col items-center justify-between px-8 py-12 h-full w-full;
 }
 
 @screen lg {
     .section-contacts__subsection {
-        @apply px-16 py-24;
+        @apply px-16;
     }
 }
 
 .section-contacts__copyright {
-    @apply w-full py-10 text-sm text-right leading-normal;
+    @apply w-full pt-10 text-sm text-center leading-normal;
 }
 </style>

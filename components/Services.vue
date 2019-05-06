@@ -53,7 +53,7 @@
             <div class="section-mission__subsection section-mission__subsection--light">
                 <h2 class="text-3xl font-normal mb-8 text-black">{{ ourMission.title }}</h2>
                 <h3
-                    class="text-base font-normal leading-loose italic mb-6"
+                    class="text-base text-justify font-normal leading-loose italic mb-6"
                     v-html="ourMission.description"
                 ></h3>
                 <button class="button button-primary button-arrow">
