@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="landing-page">
         <app-navigation/>
         <app-hero/>
         <services ref="AboutUs"/>

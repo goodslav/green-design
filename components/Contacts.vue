@@ -27,14 +27,14 @@
                             :icon="['fas', 'home']"
                             class="mx-2 text-black"
                         />
-                        <span class="mx-2">Адрес на офис сграда</span>
+                        <span class="mx-2">{{ addresses }}</span>
                     </div>
                     <div class="flex items-center flex-no-wrap justify-center lg:justify-end -m-2 text-center">
                         <fa-icon
                             :icon="['fas', 'phone']"
                             class="mx-2 text-black"
                         />
-                        <span class="mx-2">+1 (800) 123 1234, +1 (800) 123 1235</span>
+                        <span class="mx-2">{{ phones }}</span>
                     </div>
                     <div class="flex items-center flex-wrap justify-center lg:justify-end text-base -m-4">
                         <a
@@ -77,9 +77,24 @@ const { mapGetters } = createNamespacedHelpers('deetoo');
 
 export default {
     computed: {
-        ...mapGetters(['articles']),
-        contacts() {
-            return this._find(this.articles, { id: '2541887a-e34b-11e8-a653-02420a000145' });
+        ...mapGetters(['organization']),
+        logo() {
+            return this._find(this.organization.images, { order: 1 });
+        },
+        phones() {
+            return this._join(this._map(this.organization.phones, 'number'), ', ');
+        },
+        addresses() {
+            return this._join(
+                this._map(
+                    this.organization.addresses,
+                    address =>
+                        `${address.line_1}, ${address.city}, ${address.county}, ${address.postcode}, ${
+                            address.country
+                        }`,
+                ),
+                ', ',
+            );
         },
     },
     async mounted() {

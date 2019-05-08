@@ -52,7 +52,7 @@ body {
     align-items: center;
     background-attachment: fixed;
 
-    & > div {
+    & > div.smoked {
         background: inherit;
         width: 300px;
         height: 100px;
@@ -67,7 +67,7 @@ body {
         }
     }
 
-    & > div:before {
+    & > div.smoked:before {
         content: '';
         background: inherit;
         position: absolute;

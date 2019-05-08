@@ -26,7 +26,10 @@
                     </button>
 
                     <div class="box-nav box-nav-small mt-12">
-                        <div class="swiper-button-prev arrow-left swiper-button-disabled">
+                        <div
+                            @click.prevent="prev"
+                            class="swiper-button-prev arrow-left swiper-button-disabled"
+                        >
                             <svg
                                 x="0px"
                                 y="0px"
@@ -43,15 +46,19 @@
 
                         <div class="wrap-counter">
                             <div class="swiper-pagination swiper-pagination-clickable">
-                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                                <span class="swiper-pagination-bullet"></span>
-                                <span class="swiper-pagination-bullet"></span>
+                                <span
+                                    v-for="(image, index) in gallery.images"
+                                    :class="`swiper-pagination-bullet ${index === active ? 'swiper-pagination-bullet-active' : ''}`"
+                                />
                             </div>
                             <div class="divider-counter">/</div>
-                            <div class="total-counter">03</div>
+                            <div class="total-counter">0{{ gallery.images.length }}</div>
                         </div>
 
-                        <div class="swiper-button-next arrow-right">
+                        <div
+                            @click.prevent="next"
+                            class="swiper-button-next arrow-right"
+                        >
                             <svg
                                 x="0px"
                                 y="0px"
@@ -102,11 +109,7 @@ export default {
     },
     mounted() {
         setInterval(() => {
-            if (this.active + 1 < this.gallery.images.length) {
-                this.active++;
-            } else {
-                this.active = 0;
-            }
+            this.next();
         }, 4000);
     },
     computed: {
@@ -120,6 +123,20 @@ export default {
             return {
                 'background-image': `url('${image.url}')`,
             };
+        },
+        next() {
+            if (this.active + 1 < this.gallery.images.length) {
+                this.active++;
+            } else {
+                this.active = 0;
+            }
+        },
+        prev() {
+            if (this.active - 1 >= 0) {
+                this.active--;
+            } else {
+                this.active = this.gallery.images.length;
+            }
         },
     },
 };

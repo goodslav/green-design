@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="portfolio-page">
         <app-navigation/>
         <portfolio/>
     </div>

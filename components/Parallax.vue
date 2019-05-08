@@ -7,7 +7,7 @@
             offset="80%"
             type="relative"
         >
-            <div>
+            <div class="smoked">
                 <span class="absolute w-full h-full text-shadow uppercase">проекти</span>
             </div>
         </flux-parallax>
