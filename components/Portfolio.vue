@@ -3,30 +3,64 @@
         <flux-parallax
             :src="_first(gallery.images).url"
             class="section-portfolio__banner"
-            height="400px"
-            offset="80%"
+            height="600px"
             type="relative"
         >
-            <div class="shell">
+            <div class="shell flex flex-col z-10">
                 <img
                     :src="logo.url"
                     :alt="logo.title"
                     :title="organization.name"
-                    class="inline-block"
-                    width="49"
-                    height="49"
                 >
-                <h2 class="text-4xl font-bold text-white text-center w-full mt-2">Works</h2>
+                <h2 class="text-4xl font-bold text-white text-center w-full mt-2">Портфолио</h2>
                 <ul class="section-portfolio__breadcrumbs">
                     <li>
-                        <nuxt-link to="/">Home</nuxt-link>
+                        <nuxt-link to="/">Начало</nuxt-link>
                     </li>
-                    <li class="active">Works</li>
+                    <li class="active">Обекти</li>
                 </ul>
             </div>
         </flux-parallax>
-        <h2 class="text-4xl font-bold text-black text-center w-full mt-8">Обекти</h2>
-        <p class="text-lg text-center text-teal mb-24 w-full">Нашите проекти</p>
+        <h2 class="text-4xl font-bold text-black text-center w-full mt-20">Обекти</h2>
+        <p class="text-lg text-center text-teal mb-12 w-full">Нашите проекти</p>
+        <ul class="nav-custom">
+            <li>
+                <a
+                    class="active"
+                    data-isotope-filter="*"
+                    data-isotope-group="gallery"
+                    href="#"
+                >Всички</a>
+            </li>
+            <li>
+                <a
+                    data-isotope-filter="Type 1"
+                    data-isotope-group="gallery"
+                    href="#"
+                >Публични</a>
+            </li>
+            <li>
+                <a
+                    data-isotope-filter="Type 2"
+                    data-isotope-group="gallery"
+                    href="#"
+                >Градини</a>
+            </li>
+            <li>
+                <a
+                    data-isotope-filter="Type 3"
+                    data-isotope-group="gallery"
+                    href="#"
+                >Дворове</a>
+            </li>
+            <li>
+                <a
+                    data-isotope-filter="Type 4"
+                    data-isotope-group="gallery"
+                    href="#"
+                >Поливни системи</a>
+            </li>
+        </ul>
         <vue-picture-swipe :items="items"></vue-picture-swipe>
     </section>
 </template>
@@ -80,50 +114,78 @@ export default {
     @apply w-full;
 
     &:before {
+        @apply absolute hidden z-0 opacity-50;
         content: '';
-        display: none;
-        position: absolute;
+        top: 0;
         left: 50%;
+        width: 458px;
+        height: 458px;
         transform: translateX(-50%) rotate(45deg);
-        z-index: 0;
-        width: 318px;
-        height: 318px;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0) 25%, #050506 100%);
-        opacity: 0.5;
-    }
-}
-
-@media (min-width: 480px) {
-    .section-portfolio__banner:before {
-        display: block;
-        top: -40%;
     }
 }
 
 @media (min-width: 768px) {
     .section-portfolio__banner:before {
-        top: -15%;
+        display: block;
+        top: -27%;
     }
 }
 
 .section-portfolio__breadcrumbs {
-    @apply inline-block list-reset font-normal text-white text-base ml-auto mr-auto relative z-50;
+    @apply inline-block list-reset font-bold text-white text-sm mt-1 ml-auto mr-auto relative z-50 uppercase;
 
     & > li {
-        @apply inline-block text-white;
+        @apply relative inline-block pr-8 text-white align-middle;
+
+        &:last-child {
+            @apply pr-0;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &:after {
+            @apply absolute pin-t;
+            content: '/';
+            right: 10px;
+        }
     }
 
     & a,
     & a:hover,
     & a:focus,
     & a:active {
-        @apply text-white;
+        @apply text-white no-underline;
+        transition: opacity 0.25s ease-in-out;
     }
 
     & a:hover,
     & a:focus,
     & a:active {
-        @apply underline opacity-50;
+        @apply underline opacity-75;
+    }
+}
+
+.nav-custom {
+    @apply flex list-reset overflow-hidden justify-center flex-wrap;
+
+    & li {
+        @apply mt-2 ml-1 mr-1;
+    }
+
+    & a {
+        @apply block py-2 px-5 text-white text-center no-underline;
+        min-width: 122px;
+        letter-spacing: 0.025em;
+        transition: 0.3s;
+        background: #778a6e;
+
+        &:hover,
+        &.active {
+            background-color: #7e7e7e;
+        }
     }
 }
 </style>

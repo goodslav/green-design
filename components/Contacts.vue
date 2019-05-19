@@ -39,7 +39,7 @@
                     <div class="flex items-center flex-wrap justify-center lg:justify-end text-base -m-4">
                         <a
                             href="mailto:info@green-design.bg"
-                            class="no-underline text-sunset-cyan hover:text-sunset-blue-light font-semibold mx-2 my-4"
+                            class="no-underline text-purple-darker hover:text-purple font-semibold mx-2 my-4"
                         >info@green-design.bg</a>
                         <span
                             class="flex items-center justify-center flex-wrap sm:border-l border-blue-light sm:pl-3 mx-2"
@@ -51,7 +51,7 @@
                                 class="deetoo__logo inline-block ml-2"
                             >
                                 <img
-                                    src="https://s3.eu-west-2.amazonaws.com/deetoo-uk/art/logo-blue.svg"
+                                    src="https://deetoo-constructor.s3.eu-west-2.amazonaws.com/25475cd4-db6a-11e8-b116-0242ac130003-ts-1542213503.svg"
                                     title="DeeToo Logo"
                                     alt="DeeToo company logo"
                                     style="height:0.875rem;"
