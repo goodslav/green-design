@@ -61,6 +61,34 @@
                 >Поливни системи</a>
             </li>
         </ul>
+
+        <section class="flex flex-wrap justify-center items-stretch -mx-6 pt-6">
+            <article
+                :style="getStyle()"
+                class="section-portfolio__gallery-item md:w-1/2"
+            >
+                <h3>Blqblqblq</h3>
+            </article>
+            <article
+                :style="getStyle()"
+                class="section-portfolio__gallery-item md:w-1/2"
+            >
+                <h3>Blqblqblq 2</h3>
+            </article>
+            <article
+                :style="getStyle()"
+                class="section-portfolio__gallery-item md:w-1/2"
+            >
+                <h3>Blqblqblq 3</h3>
+            </article>
+            <article
+                :style="getStyle()"
+                class="section-portfolio__gallery-item md:w-1/2"
+            >
+                <h3>Blqblqblq 4</h3>
+            </article>
+        </section>
+
         <vue-picture-swipe :items="items"></vue-picture-swipe>
     </section>
 </template>
@@ -105,6 +133,20 @@ export default {
         logo() {
             return this._find(this.organization.images, { order: 1 });
         },
+        lawnGallery() {
+            return this._find(this.galleries, { id: '605595a0-7ad6-11e9-9399-0242ac13000f' });
+        },
+    },
+    methods: {
+        getStyle() {
+            if (this._isEmpty(this.lawnGallery.images)) {
+                return '';
+            }
+
+            return {
+                'background-image': `url('${this._first(this.lawnGallery.images).url}')`,
+            };
+        },
     },
 };
 </script>
@@ -122,6 +164,24 @@ export default {
         height: 458px;
         transform: translateX(-50%) rotate(45deg);
         background: linear-gradient(135deg, rgba(255, 255, 255, 0) 25%, #050506 100%);
+    }
+}
+
+.section-portfolio__gallery-item {
+    @apply flex flex-col items-center justify-center w-full bg-cover bg-center bg-no-repeat overflow-hidden m-6 text-white;
+    height: 300px;
+}
+
+@screen lg {
+    .section-portfolio__gallery-item {
+        height: 350px;
+    }
+}
+
+@screen xl {
+    .section-portfolio__gallery-item {
+        width: 560px !important;
+        height: 510px;
     }
 }
 
