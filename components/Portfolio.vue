@@ -62,34 +62,164 @@
             </li>
         </ul>
 
-        <section class="flex flex-wrap justify-center items-stretch -mx-6 pt-6">
-            <article
-                :style="getStyle()"
-                class="section-portfolio__gallery-item md:w-1/2"
+        <section class="flex flex-wrap justify-center py-10">
+            <div
+                class="flex flex-wrap justify-center items-stretch -mx-6"
+                style="max-width:1900px;"
             >
-                <h3>Blqblqblq</h3>
-            </article>
-            <article
-                :style="getStyle()"
-                class="section-portfolio__gallery-item md:w-1/2"
-            >
-                <h3>Blqblqblq 2</h3>
-            </article>
-            <article
-                :style="getStyle()"
-                class="section-portfolio__gallery-item md:w-1/2"
-            >
-                <h3>Blqblqblq 3</h3>
-            </article>
-            <article
-                :style="getStyle()"
-                class="section-portfolio__gallery-item md:w-1/2"
-            >
-                <h3>Blqblqblq 4</h3>
-            </article>
+                <article
+                    :style="getStyle()"
+                    class="section-portfolio__gallery-item md:w-1/2"
+                >
+                    <header class="mb-6">
+                        <h3 class="text-3xl font-normal leading-loose">Проект 1</h3>
+                        <p class="text-lg">Плевен, България</p>
+                    </header>
+                    <button class="button button-white button-arrow">
+                        Виж Проект
+                        <svg
+                            x="0px"
+                            y="0px"
+                            width="13px"
+                            height="22px"
+                            viewBox="0 0 16 24"
+                        >
+                            <polygon
+                                fill="none"
+                                points="1,2.5 13,12 1,21.5 "
+                            ></polygon>
+                        </svg>
+                    </button>
+                </article>
+
+                <article
+                    :style="getStyle()"
+                    class="section-portfolio__gallery-item md:w-1/2"
+                >
+                    <header class="mb-6">
+                        <h3 class="text-3xl font-normal leading-loose">Проект 2</h3>
+                        <p class="text-lg">Ловеч, България</p>
+                    </header>
+                    <button class="button button-white button-arrow">
+                        Виж Проект
+                        <svg
+                            x="0px"
+                            y="0px"
+                            width="13px"
+                            height="22px"
+                            viewBox="0 0 16 24"
+                        >
+                            <polygon
+                                fill="none"
+                                points="1,2.5 13,12 1,21.5 "
+                            ></polygon>
+                        </svg>
+                    </button>
+                </article>
+
+                <article
+                    :style="getStyle()"
+                    class="section-portfolio__gallery-item md:w-1/2"
+                >
+                    <header class="mb-6">
+                        <h3 class="text-3xl font-normal leading-loose">Проект 3</h3>
+                        <p class="text-lg">Русе, България</p>
+                    </header>
+                    <button class="button button-white button-arrow">
+                        Виж Проект
+                        <svg
+                            x="0px"
+                            y="0px"
+                            width="13px"
+                            height="22px"
+                            viewBox="0 0 16 24"
+                        >
+                            <polygon
+                                fill="none"
+                                points="1,2.5 13,12 1,21.5 "
+                            ></polygon>
+                        </svg>
+                    </button>
+                </article>
+
+                <article
+                    :style="getStyle()"
+                    class="section-portfolio__gallery-item md:w-1/2"
+                >
+                    <header class="mb-6">
+                        <h3 class="text-3xl font-normal leading-loose">Проект 4</h3>
+                        <p class="text-lg">София, България</p>
+                    </header>
+                    <button class="button button-white button-arrow">
+                        Виж Проект
+                        <svg
+                            x="0px"
+                            y="0px"
+                            width="13px"
+                            height="22px"
+                            viewBox="0 0 16 24"
+                        >
+                            <polygon
+                                fill="none"
+                                points="1,2.5 13,12 1,21.5 "
+                            ></polygon>
+                        </svg>
+                    </button>
+                </article>
+
+                <article
+                    :style="getStyle()"
+                    class="section-portfolio__gallery-item md:w-1/2"
+                >
+                    <header class="mb-6">
+                        <h3 class="text-3xl font-normal leading-loose">Проект 5</h3>
+                        <p class="text-lg">Велико Търново, България</p>
+                    </header>
+                    <button class="button button-white button-arrow">
+                        Виж Проект
+                        <svg
+                            x="0px"
+                            y="0px"
+                            width="13px"
+                            height="22px"
+                            viewBox="0 0 16 24"
+                        >
+                            <polygon
+                                fill="none"
+                                points="1,2.5 13,12 1,21.5 "
+                            ></polygon>
+                        </svg>
+                    </button>
+                </article>
+
+                <article
+                    :style="getStyle()"
+                    class="section-portfolio__gallery-item md:w-1/2"
+                >
+                    <header class="mb-6">
+                        <h3 class="text-3xl font-normal leading-loose">Проект 6</h3>
+                        <p class="text-lg">Пловдив, България</p>
+                    </header>
+                    <button class="button button-white button-arrow">
+                        Виж Проект
+                        <svg
+                            x="0px"
+                            y="0px"
+                            width="13px"
+                            height="22px"
+                            viewBox="0 0 16 24"
+                        >
+                            <polygon
+                                fill="none"
+                                points="1,2.5 13,12 1,21.5 "
+                            ></polygon>
+                        </svg>
+                    </button>
+                </article>
+            </div>
         </section>
 
-        <vue-picture-swipe :items="items"></vue-picture-swipe>
+        <!-- <vue-picture-swipe :items="items"></vue-picture-swipe> -->
     </section>
 </template>
 
@@ -97,14 +227,14 @@
 // eslint-disable-next-line
 import { createNamespacedHelpers } from 'vuex';
 import { FluxParallax } from 'vue-flux';
-import VuePictureSwipe from 'vue-picture-swipe';
+// import VuePictureSwipe from 'vue-picture-swipe';
 
 const { mapGetters } = createNamespacedHelpers('deetoo');
 
 export default {
     components: {
         FluxParallax,
-        VuePictureSwipe,
+        // VuePictureSwipe,
     },
     data() {
         return {
@@ -168,7 +298,7 @@ export default {
 }
 
 .section-portfolio__gallery-item {
-    @apply flex flex-col items-center justify-center w-full bg-cover bg-center bg-no-repeat overflow-hidden m-6 text-white;
+    @apply flex flex-col items-center justify-center w-full bg-cover bg-center bg-no-repeat overflow-hidden m-6 text-white text-center;
     height: 300px;
 }
 
