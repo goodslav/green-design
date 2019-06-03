@@ -72,14 +72,8 @@ export default {
 </script>
 
 <style>
-.portfolio-page {
-    & .main-nav {
-        @apply fixed;
-    }
-}
-
 .main-nav {
-    @apply flex w-full sticky pin-t z-50 justify-between items-center h-16 px-2;
+    @apply flex w-full fixed pin-t z-50 justify-between items-center h-16 px-2;
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0.85) 100%);
 }
 
