@@ -1,5 +1,14 @@
 require('dotenv').config();
 
+const routerBase =
+    process.env.DEPLOY_ENV === 'GH_PAGES'
+        ? {
+            router: {
+                base: '/green-design/',
+            },
+        }
+        : {};
+
 module.exports = {
     /*
      ** Headers of the page
@@ -14,6 +23,7 @@ module.exports = {
                 name: 'description',
                 content: 'Website page for BDMLR',
             },
+            { name: 'robots', content: 'noindex' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
@@ -72,20 +82,26 @@ module.exports = {
         '@nuxtjs/toast',
         '@nuxtjs/dotenv',
         '@nuxtjs/axios',
+        '@nuxtjs/robots',
         [
             'qonfucius-nuxt-fontawesome',
             {
                 componentName: 'fa-icon',
                 packs: [
                     {
-                        package: '@fortawesome/fontawesome-free-brands',
-                        icons: ['faGithub', 'faFontAwesome'],
+                        package: '@fortawesome/free-solid-svg-icons',
+                        icons: ['faHome', 'faPhone'],
                     },
                 ],
                 includeCss: true,
             },
         ],
     ],
+    ...routerBase,
+    robots: {
+        UserAgent: '*',
+        Disallow: '/',
+    },
     toast: {
         position: 'top-center',
     },

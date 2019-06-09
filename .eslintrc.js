@@ -63,5 +63,6 @@ module.exports = {
         axios: false,
         Vue: false,
         DocumentTouch: false,
+        google: false,
     },
 };

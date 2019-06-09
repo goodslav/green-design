@@ -9,7 +9,7 @@ html {
 
 html,
 body {
-    font-family: 'Poppins', Helvetica, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Montserrat', Helvetica, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .text-shadow--nav {
@@ -30,4 +30,75 @@ body {
 
 .text-shadow {
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-none {
+    text-shadow: none;
+}
+
+.bg-zuckerberg-backache {
+    background-color: #c9c6c6;
+    background-image: linear-gradient(315deg, #c9c6c6 0%, #f1f2f6 74%);
+    /* background-color: #edf1f4;
+    background-image: linear-gradient(147deg, #edf1f4 0%, #c3cbdc 74%); */
+}
+
+.flux-parallax {
+    display: flex;
+    position: relative;
+    font-size: 2.5rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+
+    & > div.smoked {
+        background: inherit;
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        overflow: hidden;
+        border-radius: 4px;
+
+        & > span {
+            position: absolute;
+            line-height: 100px;
+            text-align: center;
+        }
+    }
+
+    & > div.smoked:before {
+        content: '';
+        background: inherit;
+        position: absolute;
+        left: -25px;
+        right: -25px;
+        top: -25px;
+        bottom: -25px;
+        box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+        filter: blur(10px);
+    }
+
+    & > .shell img {
+        position: static;
+        display: inline-block;
+        visibility: visible;
+        margin: auto;
+        width: 65px;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .flux-parallax {
+        & > .shell {
+            margin-top: -215px;
+        }
+    }
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }

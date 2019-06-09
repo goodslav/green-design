@@ -1,41 +1,40 @@
 <template>
     <nav class="main-nav">
-        <div class="nav-links text-shadow--nav">
-            <a href="#News" v-smooth-scroll="{ duration : 2000 }">News</a>
-            <a href="#Who-Are-We">Join Us</a>
-            <a href="#Contact-Us">Training</a>
-        </div>
         <div class="logo">
-            <a href="#">
+            <nuxt-link to="/">
                 <img
                     :src="logo.url"
                     :alt="logo.title"
                     :title="organization.name"
                     width="100%"
                 >
-            </a>
+            </nuxt-link>
         </div>
+
         <div class="nav-links justify-end text-shadow--nav">
-            <a href="#Products">How You Can Help</a>
-            <a href="#Who-Are-We">Donate</a>
-            <a href="#Contact-Us">Contact Us</a>
+            <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
+            <nuxt-link to="portfolio">Портфолио</nuxt-link>
+            <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
-        <div class="hamburger" @click="visible = !visible">
+
+        <div
+            class="hamburger"
+            @click="visible = !visible"
+        >
             <div class="w-full"></div>
             <div class="w-3/4"></div>
             <div class="w-1/2"></div>
         </div>
+
         <div
             class="mobile-links"
             v-if="visible"
             @click="visible = !visible"
         >
-            <a href="#News">News</a>
-            <a href="#Who-Are-We">Join Us</a>
-            <a href="#Contact-Us">Training</a>
-            <a href="#Products">How You Can Help</a>
-            <a href="#Who-Are-We">Donate</a>
-            <a href="#Contact-Us">Contact Us</a>
+            <nuxt-link to="/">Начало</nuxt-link>
+            <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
+            <nuxt-link to="portfolio">Портфолио</nuxt-link>
+            <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
     </nav>
 </template>
@@ -75,24 +74,32 @@ export default {
 <style>
 .main-nav {
     @apply flex w-full fixed pin-t z-50 justify-between items-center h-16 px-2;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.65) 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0.85) 100%);
 }
 
 .logo {
+    @apply ml-2;
     width: 50px;
 }
 
 .nav-links {
     @apply w-1/3 hidden;
+
+    & > a + a {
+        @apply ml-1;
+    }
 }
 
 .nav-links a {
-    @apply mx-2 px-2 no-underline text-white text-lg;
-    transition: all 0.25s ease-in-out;
+    @apply no-underline text-white text-base;
+    padding: 8px 24px;
+    border: 2px solid transparent;
+    transition: opacity 0.25s ease-in-out, border-color 0.25s ease-in-out;
 }
 
 .nav-links a:hover {
     @apply opacity-75;
+    border: 2px solid white;
 }
 
 .mobile-links {

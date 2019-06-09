@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="landing-page">
         <app-navigation/>
         <app-hero/>
-        <our-mission/>
+        <services ref="AboutUs"/>
         <app-tools/>
-        <news/>
-        <footer-section/>
+        <parallax/>
+        <contacts ref="Contacts"/>
     </div>
 </template>
 
@@ -13,21 +13,42 @@
 import AppNavigation from '~/components/Navigation.vue';
 import AppHero from '~/components/Hero.vue';
 import AppTools from '~/components/Tools.vue';
-import News from '~/components/News.vue';
-import FooterSection from '~/components/FooterSection.vue';
-import OurMission from '../components/OurMission.vue';
+import Services from '~/components/Services.vue';
+import Contacts from '../components/Contacts.vue';
+import Parallax from '../components/Parallax.vue';
 
 export default {
     async fetch({ store }) {
         await store.dispatch('deetoo/fetchAll');
     },
     components: {
-        OurMission,
+        Contacts,
         AppNavigation,
         AppHero,
         AppTools,
-        News,
-        FooterSection,
+        Services,
+        Parallax,
+    },
+    watch: {
+        $route() {
+            this.scrollToHashTarget();
+        },
+    },
+    mounted() {
+        this.scrollToHashTarget();
+    },
+    methods: {
+        scrollToHashTarget() {
+            const targetRef = this._trimStart(this.$route.hash, '#');
+
+            if (targetRef) {
+                const target = this.$refs[targetRef].$el;
+
+                if (target) {
+                    this.$SmoothScroll(target, 500);
+                }
+            }
+        },
     },
 };
 </script>

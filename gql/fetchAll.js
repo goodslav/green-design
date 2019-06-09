@@ -6,6 +6,16 @@ export default `query FetchAll {
       type
       number
     }
+    addresses {
+      line_1
+      line_2
+      line_3
+      city
+      county
+      country
+      postcode
+      type
+    }
     images {
       title
       description

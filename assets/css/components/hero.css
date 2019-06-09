@@ -13,12 +13,12 @@
 
 @screen lg {
     .d2-hero-title {
-        @apply px-32;
+        @apply px-16 w-1/2 pin-r text-left;
     }
 }
 
 .hero-button {
-    @apply bg-sunset-navy-darkest text-white font-semibold py-4 px-6 rounded-full text-base mt-12 leading-none;
+    @apply bg-sunset-navy-darkest text-white font-semibold py-4 px-6 rounded-full text-base mt-10 leading-none;
     transition: all 0.25s ease-in-out;
 }
 

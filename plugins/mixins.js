@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import {
     filter as _filter,
     find as _find,
+    first as _first,
     forEach as _forEach,
     forOwn as _forOwn,
     get as _get,
@@ -11,6 +12,8 @@ import {
     includes as _includes,
     isEmpty as _isEmpty,
     isNil as _isNil,
+    join as _join,
+    map as _map,
     orderBy as _orderBy,
     reject as _reject,
     trimEnd as _trimEnd,
@@ -22,6 +25,7 @@ Vue.mixin({
     methods: {
         _filter,
         _find,
+        _first,
         _forEach,
         _forOwn,
         _get,
@@ -29,6 +33,8 @@ Vue.mixin({
         _includes,
         _isEmpty,
         _isNil,
+        _join,
+        _map,
         _orderBy,
         _reject,
         _trimEnd,
