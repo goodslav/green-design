@@ -1,5 +1,14 @@
 require('dotenv').config();
 
+const routerBase =
+    process.env.DEPLOY_ENV === 'GH_PAGES'
+        ? {
+            router: {
+                base: '/green-design/',
+            },
+        }
+        : {};
+
 module.exports = {
     /*
      ** Headers of the page
@@ -88,6 +97,7 @@ module.exports = {
             },
         ],
     ],
+    ...routerBase,
     robots: {
         UserAgent: '*',
         Disallow: '/',
