@@ -14,6 +14,7 @@ module.exports = {
                 name: 'description',
                 content: 'Website page for BDMLR',
             },
+            { name: 'robots', content: 'noindex' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
@@ -72,6 +73,7 @@ module.exports = {
         '@nuxtjs/toast',
         '@nuxtjs/dotenv',
         '@nuxtjs/axios',
+        '@nuxtjs/robots',
         [
             'qonfucius-nuxt-fontawesome',
             {
@@ -86,6 +88,10 @@ module.exports = {
             },
         ],
     ],
+    robots: {
+        UserAgent: '*',
+        Disallow: '/',
+    },
     toast: {
         position: 'top-center',
     },
