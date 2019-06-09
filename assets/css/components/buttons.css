@@ -1,5 +1,5 @@
 .button {
-    @apply mt-10;
+    @apply no-underline mt-10;
     display: inline-block;
     position: relative;
     padding: 10px 26px;

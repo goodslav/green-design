@@ -75,7 +75,10 @@
                         <h3 class="text-3xl font-normal leading-loose">Проект 1</h3>
                         <p class="text-lg">Плевен, България</p>
                     </header>
-                    <button class="button button-white button-arrow">
+                    <nuxt-link
+                        to="gallery/project-1"
+                        class="button button-white button-arrow"
+                    >
                         Виж Проект
                         <svg
                             x="0px"
@@ -89,7 +92,7 @@
                                 points="1,2.5 13,12 1,21.5 "
                             ></polygon>
                         </svg>
-                    </button>
+                    </nuxt-link>
                 </article>
 
                 <article
@@ -100,7 +103,10 @@
                         <h3 class="text-3xl font-normal leading-loose">Проект 2</h3>
                         <p class="text-lg">Ловеч, България</p>
                     </header>
-                    <button class="button button-white button-arrow">
+                    <nuxt-link
+                        to="gallery/project-2"
+                        class="button button-white button-arrow"
+                    >
                         Виж Проект
                         <svg
                             x="0px"
@@ -114,7 +120,7 @@
                                 points="1,2.5 13,12 1,21.5 "
                             ></polygon>
                         </svg>
-                    </button>
+                    </nuxt-link>
                 </article>
 
                 <article
@@ -125,7 +131,10 @@
                         <h3 class="text-3xl font-normal leading-loose">Проект 3</h3>
                         <p class="text-lg">Русе, България</p>
                     </header>
-                    <button class="button button-white button-arrow">
+                    <nuxt-link
+                        to="gallery/project-3"
+                        class="button button-white button-arrow"
+                    >
                         Виж Проект
                         <svg
                             x="0px"
@@ -139,7 +148,7 @@
                                 points="1,2.5 13,12 1,21.5 "
                             ></polygon>
                         </svg>
-                    </button>
+                    </nuxt-link>
                 </article>
 
                 <article
@@ -150,7 +159,10 @@
                         <h3 class="text-3xl font-normal leading-loose">Проект 4</h3>
                         <p class="text-lg">София, България</p>
                     </header>
-                    <button class="button button-white button-arrow">
+                    <nuxt-link
+                        to="gallery/project-4"
+                        class="button button-white button-arrow"
+                    >
                         Виж Проект
                         <svg
                             x="0px"
@@ -164,7 +176,7 @@
                                 points="1,2.5 13,12 1,21.5 "
                             ></polygon>
                         </svg>
-                    </button>
+                    </nuxt-link>
                 </article>
 
                 <article
@@ -175,7 +187,10 @@
                         <h3 class="text-3xl font-normal leading-loose">Проект 5</h3>
                         <p class="text-lg">Велико Търново, България</p>
                     </header>
-                    <button class="button button-white button-arrow">
+                    <nuxt-link
+                        to="gallery/project-5"
+                        class="button button-white button-arrow"
+                    >
                         Виж Проект
                         <svg
                             x="0px"
@@ -189,7 +204,7 @@
                                 points="1,2.5 13,12 1,21.5 "
                             ></polygon>
                         </svg>
-                    </button>
+                    </nuxt-link>
                 </article>
 
                 <article
@@ -200,7 +215,10 @@
                         <h3 class="text-3xl font-normal leading-loose">Проект 6</h3>
                         <p class="text-lg">Пловдив, България</p>
                     </header>
-                    <button class="button button-white button-arrow">
+                    <nuxt-link
+                        to="gallery/project-6"
+                        class="button button-white button-arrow"
+                    >
                         Виж Проект
                         <svg
                             x="0px"
@@ -214,12 +232,10 @@
                                 points="1,2.5 13,12 1,21.5 "
                             ></polygon>
                         </svg>
-                    </button>
+                    </nuxt-link>
                 </article>
             </div>
         </section>
-
-        <!-- <vue-picture-swipe :items="items"></vue-picture-swipe> -->
     </section>
 </template>
 
@@ -227,33 +243,12 @@
 // eslint-disable-next-line
 import { createNamespacedHelpers } from 'vuex';
 import { FluxParallax } from 'vue-flux';
-// import VuePictureSwipe from 'vue-picture-swipe';
 
 const { mapGetters } = createNamespacedHelpers('deetoo');
 
 export default {
     components: {
         FluxParallax,
-        // VuePictureSwipe,
-    },
-    data() {
-        return {
-            items: [
-                {
-                    src: 'http://via.placeholder.com/600x400',
-                    thumbnail: 'http://via.placeholder.com/64x64',
-                    w: 600,
-                    h: 400,
-                    alt: 'some numbers on a grey background', // optional alt attribute for thumbnail image
-                },
-                {
-                    src: 'http://via.placeholder.com/1200x900',
-                    thumbnail: 'http://via.placeholder.com/64x64',
-                    w: 1200,
-                    h: 900,
-                },
-            ],
-        };
     },
     computed: {
         ...mapGetters(['galleries', 'organization']),

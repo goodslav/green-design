@@ -1,20 +1,20 @@
 <template>
-    <div class="portfolio-page">
+    <div class="gallery-page">
         <app-navigation/>
-        <portfolio/>
+        <gallery/>
         <app-footer/>
     </div>
 </template>
 
 <script>
 import AppNavigation from '~/components/Navigation.vue';
-import Portfolio from '~/components/Portfolio.vue';
+import Gallery from '~/components/Gallery.vue';
 import AppFooter from '~/components/Footer.vue';
 
 export default {
     components: {
         AppNavigation,
-        Portfolio,
+        Gallery,
         AppFooter,
     },
 };
