@@ -1,13 +1,13 @@
 <template>
-    <nav class="main-nav">
+    <nav v-if="!_isEmpty(organizations)" class="main-nav">
         <div class="logo">
             <nuxt-link to="/">
                 <img
-                    :src="logo.url"
-                    :alt="logo.title"
-                    :title="organization.name"
+                    :src="assetUrlFromObj(logo)"
+                    :alt="`${organization.Name} Logo Image`"
+                    :title="organization.Name"
                     width="100%"
-                >
+                />
             </nuxt-link>
         </div>
 
@@ -17,20 +17,13 @@
             <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
 
-        <div
-            class="hamburger"
-            @click="visible = !visible"
-        >
+        <div class="hamburger" @click="visible = !visible">
             <div class="w-full"></div>
             <div class="w-3/4"></div>
             <div class="w-1/2"></div>
         </div>
 
-        <div
-            class="mobile-links"
-            v-if="visible"
-            @click="visible = !visible"
-        >
+        <div class="mobile-links" v-if="visible" @click="visible = !visible">
             <nuxt-link to="/">Начало</nuxt-link>
             <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
             <nuxt-link to="portfolio">Портфолио</nuxt-link>
@@ -40,16 +33,23 @@
 </template>
 
 <script>
-// eslint-disable-next-line
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters } = createNamespacedHelpers('deetoo');
+import organizationQuery from '~/gql/queries/organization/organization.gql';
 
 export default {
     data() {
         return {
+            organizations: [],
             visible: false,
         };
+    },
+    apollo: {
+        organizations: {
+            prefetch: true,
+            query: organizationQuery,
+            variables() {
+                return { where: { Identifier: 'green-design-pleven' } };
+            },
+        },
     },
     watch: {
         visible(value) {
@@ -63,9 +63,15 @@ export default {
         },
     },
     computed: {
-        ...mapGetters(['organization']),
+        organization() {
+            if (this._isEmpty(this.organizations)) {
+                return null;
+            }
+
+            return this._first(this.organizations);
+        },
         logo() {
-            return this._find(this.organization.images, { order: 1 });
+            return this._first(this.organization.Logos);
         },
     },
 };

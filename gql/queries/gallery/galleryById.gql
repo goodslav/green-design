@@ -1,0 +1,47 @@
+query GalleryById($id: ID!) {
+    gallery(id: $id) {
+        id
+        Identifier
+        Name
+        Description_Short
+        Description
+        createdAt
+        Active
+        Images {
+            id
+            Title
+            Description
+            Active
+            Image {
+                id
+                provider
+                hash
+                url
+                name
+            }
+            Order
+        }
+        Videos {
+            id
+            Title
+            Description
+            Active
+            Video {
+                id
+                provider
+                hash
+                url
+                name
+            }
+            Order
+        }
+        project {
+            id
+            Identifier
+            Name
+            Description
+            Description_Short
+            Active
+        }
+    }
+}

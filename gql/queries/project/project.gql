@@ -1,0 +1,38 @@
+query Project($where: JSON) {
+    projects(limit: 1, where: $where) {
+        id
+        Identifier
+        Name
+        Description
+        Description_Short
+        Images {
+            id
+            provider
+            name
+            hash
+            url
+        }
+        Date_Finished
+        Type
+        categories {
+            id
+            Identifier
+            Name
+            Active
+        }
+        gallery {
+            id
+            Identifier
+            Name
+            Active
+        }
+        people {
+            id
+            Identifier
+            Email
+            First_Name
+            Last_Name
+            Active
+        }
+    }
+}

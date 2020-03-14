@@ -18,8 +18,8 @@ module.exports = {
         node: true,
         browser: true,
     },
-    extends: ['airbnb-base', 'prettier', 'plugin:vue/essential'],
-    plugins: ['vue', 'prettier', 'import'],
+    extends: ['airbnb-base', 'plugin:vue/essential', 'prettier/vue', 'plugin:prettier/recommended'],
+    plugins: ['import'],
     settings: {
         'import/resolver': {
             webpack: {
@@ -44,7 +44,7 @@ module.exports = {
     },
     rules: {
         'prettier/prettier': 'error',
-        indent: ['error', 4, { SwitchCase: 1 }],
+        indent: ['error', 4, { SwitchCase: 1, ignoredNodes: ['TemplateLiteral'] }],
         'max-len': [
             'error',
             {
@@ -64,5 +64,6 @@ module.exports = {
         Vue: false,
         DocumentTouch: false,
         google: false,
+        $nuxt: true,
     },
 };

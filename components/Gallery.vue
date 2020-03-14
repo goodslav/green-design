@@ -1,13 +1,9 @@
 <template>
-    <section class="w-full">
+    <section class="w-full" v-if="_isEmpty(gallery)">
         <h2 class="text-4xl font-bold text-black text-center w-full mt-20">Проект 1</h2>
         <p class="text-lg text-center text-teal mb-12 w-full">Галерия с изображения</p>
-
         <section class="flex flex-wrap justify-center py-10">
-            <div
-                class="flex flex-wrap justify-center items-stretch -mx-6"
-                style="max-width:1900px;"
-            >
+            <div class="flex flex-wrap justify-center items-stretch -mx-6" style="max-width:1900px;">
                 <vue-picture-swipe :items="items"></vue-picture-swipe>
             </div>
         </section>
@@ -15,11 +11,8 @@
 </template>
 
 <script>
-// eslint-disable-next-line
-import { createNamespacedHelpers } from 'vuex';
 import VuePictureSwipe from 'vue-picture-swipe';
-
-const { mapGetters } = createNamespacedHelpers('deetoo');
+// import galleryQuery from '~/gql/queries/gallery/galleryById.gql';
 
 export default {
     components: {
@@ -27,6 +20,7 @@ export default {
     },
     data() {
         return {
+            gallery: Object,
             items: [
                 {
                     src: 'http://via.placeholder.com/600x400',
@@ -44,14 +38,16 @@ export default {
             ],
         };
     },
-    computed: {
-        ...mapGetters(['galleries']),
-        gallery() {
-            return this._find(this.galleries, { id: '26b54c30-6da9-11e9-ab45-0242ac13000f' });
+    /* apollo: {
+        gallery: {
+            query: galleryQuery,
+            prefetch: ({ route }) => ({ id: route.params.id }),
+            variables() {
+                return { id: this.$route.params.id };
+            },
         },
-    },
+    }, */
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

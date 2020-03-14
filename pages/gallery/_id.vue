@@ -1,8 +1,8 @@
 <template>
     <div class="gallery-page">
-        <app-navigation/>
-        <gallery/>
-        <app-footer/>
+        <app-navigation />
+        <gallery />
+        <app-footer />
     </div>
 </template>
 

@@ -1,0 +1,33 @@
+query Categories {
+    categories {
+        id
+        Identifier
+        Name
+        Description_Short
+        Description
+        Active
+        Images {
+            id
+            provider
+            hash
+            url
+            name
+        }
+        articles {
+            id
+            Identifier
+            Title
+            Description
+            Content
+            Active
+        }
+        projects {
+            id
+            Identifier
+            Name
+            Description_Short
+            Description
+            Active
+        }
+    }
+}

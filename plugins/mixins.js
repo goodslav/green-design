@@ -5,6 +5,7 @@ import {
     filter as _filter,
     find as _find,
     first as _first,
+    flatMap as _flatMap,
     forEach as _forEach,
     forOwn as _forOwn,
     get as _get,
@@ -26,6 +27,7 @@ Vue.mixin({
         _filter,
         _find,
         _first,
+        _flatMap,
         _forEach,
         _forOwn,
         _get,
@@ -45,6 +47,26 @@ Vue.mixin({
         },
         truncateText(text, length = 125) {
             return _truncate(text, { length, separator: /,? +/ });
+        },
+        assetUrl(url = '') {
+            if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) {
+                return url;
+            }
+
+            return `${process.env.ASSET_URL}${url}`;
+        },
+        assetUrlFromObj(fileObj = {}) {
+            if (_isEmpty(fileObj)) {
+                return '';
+            }
+
+            const url = this.assetUrl(_get(fileObj, 'url'));
+
+            if (_get(fileObj, 'provider') === 'aws-s3') {
+                return url.replace(new RegExp(process.env.S3_URL, 'g'), process.env.ASSET_URL);
+            }
+
+            return url;
         },
     },
 });

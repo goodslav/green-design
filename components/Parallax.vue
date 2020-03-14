@@ -1,7 +1,7 @@
 <template>
-    <section class="flex w-full">
+    <section class="flex w-full" v-if="!_isEmpty(galleries)">
         <flux-parallax
-            :src="_first(gallery.images).url"
+            :src="assetUrlFromObj(_first(gallery.Images).Image)"
             class="w-full"
             height="400px"
             offset="80%"
@@ -15,20 +15,34 @@
 </template>
 
 <script>
-// eslint-disable-next-line
-import { createNamespacedHelpers } from 'vuex';
 import { FluxParallax } from 'vue-flux';
-
-const { mapGetters } = createNamespacedHelpers('deetoo');
+import galleryQuery from '~/gql/queries/gallery/gallery.gql';
 
 export default {
     components: {
         FluxParallax,
     },
+    data() {
+        return {
+            galleries: [],
+        };
+    },
+    apollo: {
+        galleries: {
+            prefetch: true,
+            query: galleryQuery,
+            variables() {
+                return { where: { Identifier: 'portfolio-page-hero-banner', Active: true } };
+            },
+        },
+    },
     computed: {
-        ...mapGetters(['galleries']),
         gallery() {
-            return this._find(this.galleries, { id: '26b54c30-6da9-11e9-ab45-0242ac13000f' });
+            if (this._isEmpty(this.galleries)) {
+                return null;
+            }
+
+            return this._first(this.galleries);
         },
     },
 };

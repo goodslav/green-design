@@ -1,8 +1,8 @@
 <template>
     <div class="portfolio-page">
-        <app-navigation/>
-        <portfolio/>
-        <app-footer/>
+        <app-navigation />
+        <portfolio />
+        <app-footer />
     </div>
 </template>
 
@@ -19,3 +19,10 @@ export default {
     },
 };
 </script>
+
+<style>
+.portfolio-page {
+    max-width: 100vw;
+    overflow: hidden;
+}
+</style>

@@ -1,45 +1,20 @@
 <template>
     <section class="section-services flex flex-wrap justify-center">
-        <div
-            class="w-full lg:w-1/2 text-white bg-cover bg-center"
-            :style="getStyle(becomeAHero)"
-        >
-            <!-- <div class="section-mission__subsection section-mission__subsection--light">
-                <h2 class="text-3xl font-bold mb-8 text-sunset-blue-lightest">{{ becomeAHero.title }}</h2>
-                <h3
-                    class="text-base font-normal leading-loose italic mb-6"
-                    v-html="becomeAHero.description"
-                ></h3>
-                <button class="section-mission__button section-mission__button--light">Apply Now</button>
-            </div>-->
-            <section class="flex flex-wrap justify-center">
+        <div class="w-full lg:w-1/2 text-white bg-cover bg-center">
+            <section class="flex flex-wrap justify-center" v-if="!_isEmpty(articles)">
                 <article
-                    v-for="(article, index)  in myArticles"
+                    v-for="(article, index) in myArticles"
                     :class="getArticleClass(index)"
+                    :key="`service_article_card_${article.id}`"
                 >
-                    <a
-                        href="#"
-                        class="inline-block w-full h-full no-underline"
-                    >
+                    <a href="#" class="inline-block w-full h-full no-underline">
                         <div class="image-card">
-                            <h3 :class="getArticleHeadingClass(index)">{{ article.title }}</h3>
-                            <h5
-                                v-html="article.description"
-                                :class="getArticleDescriptionClass(index)"
-                            ></h5>
+                            <h3 :class="getArticleHeadingClass(index)">{{ article.Title }}</h3>
+                            <h5 v-html="article.Content" :class="getArticleDescriptionClass(index)"></h5>
                             <div class="arrow-small-down">
-                                <svg
-                                    x="0px"
-                                    y="0px"
-                                    width="19px"
-                                    height="11px"
-                                    viewBox="2 0.5 18 14.5"
-                                >
+                                <svg x="0px" y="0px" width="19px" height="11px" viewBox="2 0.5 18 14.5">
                                     <g>
-                                        <polygon
-                                            fill="none"
-                                            points="20.406,1.5 10.906,13.5 1.406,1.5"
-                                        ></polygon>
+                                        <polygon fill="none" points="20.406,1.5 10.906,13.5 1.406,1.5" />
                                     </g>
                                 </svg>
                             </div>
@@ -49,55 +24,67 @@
             </section>
         </div>
 
-        <div class="w-full lg:w-1/2 bg-white bg-cover bg-center">
-            <div
+        <div class="w-full lg:w-1/2 bg-white bg-cover bg-center" id="AboutUs">
+            <section
                 class="section-mission__subsection section-mission__subsection--light"
-                id="About-Us"
+                v-if="!_isEmpty(organizations) && !_isEmpty(articles)"
             >
-                <h2 class="text-3xl font-normal mb-8 text-black">{{ ourMission.title }}</h2>
+                <h2 class="text-3xl font-normal mb-8 text-black">{{ ourMission.Title }}</h2>
                 <h3
                     class="text-base text-justify font-normal leading-loose italic mb-6"
-                    v-html="ourMission.description"
+                    v-html="organization.Description"
                 ></h3>
                 <button class="button button-primary button-arrow">
                     Прочети Още
-                    <svg
-                        x="0px"
-                        y="0px"
-                        width="13px"
-                        height="22px"
-                        viewBox="0 0 16 24"
-                    >
-                        <polygon
-                            fill="none"
-                            points="1,2.5 13,12 1,21.5 "
-                        ></polygon>
+                    <svg x="0px" y="0px" width="13px" height="22px" viewBox="0 0 16 24">
+                        <polygon fill="none" points="1,2.5 13,12 1,21.5 " />
                     </svg>
                 </button>
-            </div>
+            </section>
         </div>
     </section>
 </template>
 
 <script>
-// eslint-disable-next-line
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters } = createNamespacedHelpers('deetoo');
+import articlesQuery from '~/gql/queries/article/articles.gql';
+import organizationQuery from '~/gql/queries/organization/organization.gql';
 
 export default {
-    computed: {
-        ...mapGetters(['articles']),
-        ourMission() {
-            return this._find(this.articles, { id: '2541887a-e34b-11e8-a653-02420a000145' });
+    data() {
+        return {
+            articles: [],
+            organizations: [],
+        };
+    },
+    apollo: {
+        articles: {
+            prefetch: true,
+            query: articlesQuery,
         },
-        becomeAHero() {
-            return this._find(this.articles, { id: '2feb5b98-e34b-11e8-a760-02420a000145' });
+        organizations: {
+            prefetch: true,
+            query: organizationQuery,
+            variables() {
+                return { where: { Identifier: 'green-design-pleven' } };
+            },
+        },
+    },
+    computed: {
+        organization() {
+            if (this._isEmpty(this.organizations)) {
+                return null;
+            }
+
+            return this._first(this.organizations);
+        },
+        ourMission() {
+            return this._find(this.articles, { Identifier: 'about-us-section', Active: true });
         },
         myArticles() {
             return this._filter(
                 this.articles,
-                article => article.category.id === 'eaa33002-65f8-11e9-b2df-0242ac13000f',
+                article =>
+                    article.Active && !!this._find(article.categories, { Identifier: 'main-page-services-category' }),
             );
         },
     },
@@ -133,15 +120,6 @@ export default {
                 { 'text-shadow-none': articleIndex === 3 },
                 { 'opacity-50': articleIndex === 0 || articleIndex === 1 },
             ];
-        },
-        getStyle(article) {
-            if (this._isEmpty(article.images)) {
-                return '';
-            }
-
-            return {
-                'background-image': `url('${article.images[0].url}')`,
-            };
         },
     },
 };

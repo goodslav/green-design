@@ -1,0 +1,56 @@
+query Organizations {
+    organizations {
+        id
+        Identifier
+        Email
+        Name
+        Meta_Description
+        Description
+        Map_Info {
+            id
+            MAP_LAT
+            MAP_LNG
+            MAP_ZOOM
+            MAP_STYLES
+            MAP_LOCATIONS
+        }
+        Date_Established
+        Logos {
+            id
+            provider
+            name
+            hash
+            url
+        }
+        Addresses {
+            id
+            Identifier
+            Type
+            Line_1
+            Line_1
+            City
+            County
+            Country
+            Postcode
+            Formatted_Address
+            Description
+            Active
+            Is_Primary
+        }
+        Phones {
+            id
+            Identifier
+            Number
+            Description
+            Is_Primary
+            Type
+            Active
+        }
+        Social_Links {
+            id
+            Link
+            Type
+            Active
+        }
+    }
+}

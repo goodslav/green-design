@@ -1,11 +1,11 @@
 <template>
     <div class="landing-page">
-        <app-navigation/>
-        <app-hero/>
-        <services ref="AboutUs"/>
-        <app-tools/>
-        <parallax/>
-        <contacts ref="Contacts"/>
+        <app-navigation />
+        <app-hero />
+        <services ref="AboutUs" />
+        <app-tools />
+        <parallax />
+        <contacts ref="Contacts" />
     </div>
 </template>
 
@@ -18,9 +18,6 @@ import Contacts from '../components/Contacts.vue';
 import Parallax from '../components/Parallax.vue';
 
 export default {
-    async fetch({ store }) {
-        await store.dispatch('deetoo/fetchAll');
-    },
     components: {
         Contacts,
         AppNavigation,

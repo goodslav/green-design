@@ -1,18 +1,14 @@
 <template>
-    <section class="w-full">
+    <section class="w-full" v-if="!_isEmpty(organizations) && !_isEmpty(galleries)">
         <flux-parallax
-            :src="_first(gallery.images).url"
+            :src="assetUrlFromObj(_first(gallery.Images).Image)"
             class="section-portfolio__banner"
             height="600px"
             type="relative"
         >
             <div class="shell flex flex-col z-10">
-                <img
-                    :src="logo.url"
-                    :alt="logo.title"
-                    :title="organization.name"
-                >
-                <h2 class="text-4xl font-bold text-white text-center w-full mt-2">Портфолио</h2>
+                <img :src="assetUrlFromObj(logo)" :alt="logo.name" :title="organization.Name" />
+                <h2 class="text-4xl font-bold text-white text-center w-full mt-2">{{ gallery.Name }}</h2>
                 <ul class="section-portfolio__breadcrumbs">
                     <li>
                         <nuxt-link to="/">Начало</nuxt-link>
@@ -21,255 +17,128 @@
                 </ul>
             </div>
         </flux-parallax>
+
         <h2 class="text-4xl font-bold text-black text-center w-full mt-20">Обекти</h2>
+
         <p class="text-lg text-center text-teal mb-12 w-full">Нашите проекти</p>
-        <ul class="nav-custom">
-            <li>
-                <a
-                    class="active"
-                    data-isotope-filter="*"
-                    data-isotope-group="gallery"
-                    href="#"
-                >Всички</a>
-            </li>
-            <li>
-                <a
-                    data-isotope-filter="Type 1"
-                    data-isotope-group="gallery"
-                    href="#"
-                >Публични</a>
-            </li>
-            <li>
-                <a
-                    data-isotope-filter="Type 2"
-                    data-isotope-group="gallery"
-                    href="#"
-                >Градини</a>
-            </li>
-            <li>
-                <a
-                    data-isotope-filter="Type 3"
-                    data-isotope-group="gallery"
-                    href="#"
-                >Дворове</a>
-            </li>
-            <li>
-                <a
-                    data-isotope-filter="Type 4"
-                    data-isotope-group="gallery"
-                    href="#"
-                >Поливни системи</a>
-            </li>
-        </ul>
 
-        <section class="flex flex-wrap justify-center py-10">
-            <div
-                class="flex flex-wrap justify-center items-stretch -mx-6"
-                style="max-width:1900px;"
-            >
-                <article
-                    :style="getStyle()"
-                    class="section-portfolio__gallery-item md:w-1/2"
-                >
-                    <header class="mb-6">
-                        <h3 class="text-3xl font-normal leading-loose">Проект 1</h3>
-                        <p class="text-lg">Плевен, България</p>
-                    </header>
-                    <nuxt-link
-                        to="gallery/project-1"
-                        class="button button-white button-arrow"
-                    >
-                        Виж Проект
-                        <svg
-                            x="0px"
-                            y="0px"
-                            width="13px"
-                            height="22px"
-                            viewBox="0 0 16 24"
-                        >
-                            <polygon
-                                fill="none"
-                                points="1,2.5 13,12 1,21.5 "
-                            ></polygon>
-                        </svg>
-                    </nuxt-link>
-                </article>
+        <no-ssr>
+            <ul class="nav-custom">
+                <li>
+                    <a class="active" data-isotope-filter="*" data-isotope-group="gallery" href="#">Всички</a>
+                </li>
+                <li v-for="projectCategory in projectCategories" :key="`project_category_tab_${projectCategory.id}`">
+                    <a data-isotope-filter="Type 1" data-isotope-group="gallery" href="#">{{ projectCategory.Name }}</a>
+                </li>
+            </ul>
 
-                <article
-                    :style="getStyle()"
-                    class="section-portfolio__gallery-item md:w-1/2"
-                >
-                    <header class="mb-6">
-                        <h3 class="text-3xl font-normal leading-loose">Проект 2</h3>
-                        <p class="text-lg">Ловеч, България</p>
-                    </header>
-                    <nuxt-link
-                        to="gallery/project-2"
-                        class="button button-white button-arrow"
+            <section class="flex flex-wrap justify-center py-10">
+                <div class="section-portfolio__gallery-holder">
+                    <article
+                        v-for="project in projects"
+                        :key="`project_card_${project.id}`"
+                        :style="getStyle()"
+                        class="section-portfolio__gallery-item md:w-1/2"
                     >
-                        Виж Проект
-                        <svg
-                            x="0px"
-                            y="0px"
-                            width="13px"
-                            height="22px"
-                            viewBox="0 0 16 24"
-                        >
-                            <polygon
-                                fill="none"
-                                points="1,2.5 13,12 1,21.5 "
-                            ></polygon>
-                        </svg>
-                    </nuxt-link>
-                </article>
-
-                <article
-                    :style="getStyle()"
-                    class="section-portfolio__gallery-item md:w-1/2"
-                >
-                    <header class="mb-6">
-                        <h3 class="text-3xl font-normal leading-loose">Проект 3</h3>
-                        <p class="text-lg">Русе, България</p>
-                    </header>
-                    <nuxt-link
-                        to="gallery/project-3"
-                        class="button button-white button-arrow"
-                    >
-                        Виж Проект
-                        <svg
-                            x="0px"
-                            y="0px"
-                            width="13px"
-                            height="22px"
-                            viewBox="0 0 16 24"
-                        >
-                            <polygon
-                                fill="none"
-                                points="1,2.5 13,12 1,21.5 "
-                            ></polygon>
-                        </svg>
-                    </nuxt-link>
-                </article>
-
-                <article
-                    :style="getStyle()"
-                    class="section-portfolio__gallery-item md:w-1/2"
-                >
-                    <header class="mb-6">
-                        <h3 class="text-3xl font-normal leading-loose">Проект 4</h3>
-                        <p class="text-lg">София, България</p>
-                    </header>
-                    <nuxt-link
-                        to="gallery/project-4"
-                        class="button button-white button-arrow"
-                    >
-                        Виж Проект
-                        <svg
-                            x="0px"
-                            y="0px"
-                            width="13px"
-                            height="22px"
-                            viewBox="0 0 16 24"
-                        >
-                            <polygon
-                                fill="none"
-                                points="1,2.5 13,12 1,21.5 "
-                            ></polygon>
-                        </svg>
-                    </nuxt-link>
-                </article>
-
-                <article
-                    :style="getStyle()"
-                    class="section-portfolio__gallery-item md:w-1/2"
-                >
-                    <header class="mb-6">
-                        <h3 class="text-3xl font-normal leading-loose">Проект 5</h3>
-                        <p class="text-lg">Велико Търново, България</p>
-                    </header>
-                    <nuxt-link
-                        to="gallery/project-5"
-                        class="button button-white button-arrow"
-                    >
-                        Виж Проект
-                        <svg
-                            x="0px"
-                            y="0px"
-                            width="13px"
-                            height="22px"
-                            viewBox="0 0 16 24"
-                        >
-                            <polygon
-                                fill="none"
-                                points="1,2.5 13,12 1,21.5 "
-                            ></polygon>
-                        </svg>
-                    </nuxt-link>
-                </article>
-
-                <article
-                    :style="getStyle()"
-                    class="section-portfolio__gallery-item md:w-1/2"
-                >
-                    <header class="mb-6">
-                        <h3 class="text-3xl font-normal leading-loose">Проект 6</h3>
-                        <p class="text-lg">Пловдив, България</p>
-                    </header>
-                    <nuxt-link
-                        to="gallery/project-6"
-                        class="button button-white button-arrow"
-                    >
-                        Виж Проект
-                        <svg
-                            x="0px"
-                            y="0px"
-                            width="13px"
-                            height="22px"
-                            viewBox="0 0 16 24"
-                        >
-                            <polygon
-                                fill="none"
-                                points="1,2.5 13,12 1,21.5 "
-                            ></polygon>
-                        </svg>
-                    </nuxt-link>
-                </article>
-            </div>
-        </section>
+                        <header class="mb-6">
+                            <h3 class="text-3xl font-normal leading-loose">{{ project.Name }}</h3>
+                            <p class="text-lg">{{ project.Description_Short }}</p>
+                        </header>
+                        <nuxt-link to="gallery/project-1" class="button button-white button-arrow">
+                            Виж Проект
+                            <svg x="0px" y="0px" width="13px" height="22px" viewBox="0 0 16 24">
+                                <polygon fill="none" points="1,2.5 13,12 1,21.5 " />
+                            </svg>
+                        </nuxt-link>
+                    </article>
+                </div>
+            </section>
+        </no-ssr>
     </section>
 </template>
 
 <script>
-// eslint-disable-next-line
-import { createNamespacedHelpers } from 'vuex';
 import { FluxParallax } from 'vue-flux';
-
-const { mapGetters } = createNamespacedHelpers('deetoo');
+import categoriesQuery from '~/gql/queries/category/categories.gql';
+import galleriesQuery from '~/gql/queries/gallery/galleries.gql';
+import organizationQuery from '~/gql/queries/organization/organization.gql';
 
 export default {
     components: {
         FluxParallax,
     },
+    data() {
+        return {
+            organizations: [],
+            categories: [],
+            galleries: [],
+            selectedCategoryId: null,
+        };
+    },
+    apollo: {
+        organizations: {
+            prefetch: true,
+            query: organizationQuery,
+            variables() {
+                return { where: { Identifier: 'green-design-pleven' } };
+            },
+        },
+        categories: {
+            prefetch: true,
+            query: categoriesQuery,
+        },
+        galleries: {
+            prefetch: true,
+            query: galleriesQuery,
+        },
+    },
     computed: {
-        ...mapGetters(['galleries', 'organization']),
+        organization() {
+            if (this._isEmpty(this.organizations)) {
+                return null;
+            }
+
+            return this._first(this.organizations);
+        },
+        projectCategories() {
+            if (this._isEmpty(this.categories)) {
+                return [];
+            }
+
+            return this._filter(this.categories, category => category.Active && !this._isEmpty(category.projects));
+        },
+        projects() {
+            let projects;
+
+            if (!this.selectedCategoryId) {
+                projects = this._flatMap(this.projectCategories, 'projects');
+            } else {
+                projects = this._flatMap(
+                    this._find(this.projectCategories, { id: this.selectedCategoryId }),
+                    'projects',
+                );
+            }
+
+            return this._filter(projects, 'Active');
+        },
         gallery() {
-            return this._find(this.galleries, { id: '26b54c30-6da9-11e9-ab45-0242ac13000f' });
+            return this._find(this.galleries, { Identifier: 'portfolio-page-hero-banner', Active: true });
         },
         logo() {
-            return this._find(this.organization.images, { order: 1 });
+            return this._first(this.organization.Logos);
         },
         lawnGallery() {
-            return this._find(this.galleries, { id: '605595a0-7ad6-11e9-9399-0242ac13000f' });
+            return this._find(this.galleries, { Identifier: 'portfolio-page-lawns-gallery', Active: true });
         },
     },
     methods: {
         getStyle() {
-            if (this._isEmpty(this.lawnGallery.images)) {
+            if (this._isEmpty(this.lawnGallery.Images)) {
                 return '';
             }
 
             return {
-                'background-image': `url('${this._first(this.lawnGallery.images).url}')`,
+                'background-image': `url('${this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image)}')`,
             };
         },
     },
@@ -292,12 +161,21 @@ export default {
     }
 }
 
+.section-portfolio__gallery-holder {
+    @apply flex flex-wrap justify-center items-stretch -mx-6 overflow-hidden;
+    max-width: 100vw;
+}
+
 .section-portfolio__gallery-item {
     @apply flex flex-col items-center justify-center w-full bg-cover bg-center bg-no-repeat overflow-hidden m-6 text-white text-center;
     height: 300px;
 }
 
 @screen lg {
+    .section-portfolio__gallery-holder {
+        max-width: 1900px;
+    }
+
     .section-portfolio__gallery-item {
         height: 350px;
     }

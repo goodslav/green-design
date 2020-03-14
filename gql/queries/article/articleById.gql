@@ -1,0 +1,33 @@
+query ArticleById($id: ID!) {
+    article(id: $id) {
+        id
+        Identifier
+        Title
+        Description
+        Content
+        Active
+        createdAt
+        Media {
+            id
+            provider
+            hash
+            url
+            name
+        }
+        categories {
+            id
+            Identifier
+            Name
+            Description
+            Active
+        }
+        person {
+            id
+            Identifier
+            First_Name
+            Last_Name
+            Email
+            Active
+        }
+    }
+}

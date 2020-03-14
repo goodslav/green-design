@@ -1,0 +1,40 @@
+query Category($where: JSON) {
+    categories(limit: 1, where: $where) {
+        id
+        Identifier
+        Name
+        Description_Short
+        Description
+        Active
+        Images {
+            id
+            provider
+            hash
+            url
+            name
+        }
+        articles {
+            id
+            Identifier
+            Title
+            Description
+            Content
+            Active
+            Media {
+                id
+                provider
+                hash
+                url
+                name
+            }
+        }
+        projects {
+            id
+            Identifier
+            Name
+            Description_Short
+            Description
+            Active
+        }
+    }
+}
