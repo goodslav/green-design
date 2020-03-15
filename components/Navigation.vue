@@ -4,7 +4,7 @@
             <nuxt-link to="/">
                 <img
                     :src="assetUrlFromObj(logo)"
-                    :alt="`${organization.Name} Logo Image`"
+                    :alt="`${organization.Name} Лого Изображение`"
                     :title="organization.Name"
                     width="100%"
                 />
@@ -50,6 +50,11 @@ export default {
                 return { where: { Identifier: 'green-design-pleven' } };
             },
         },
+    },
+    mounted() {
+        if (process.client && !this.visible) {
+            document.documentElement.classList.remove('overflow-hidden');
+        }
     },
     watch: {
         visible(value) {
