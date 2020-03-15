@@ -22,38 +22,59 @@
 
         <p class="text-lg text-center text-teal mb-12 w-full">Нашите проекти</p>
 
-        <no-ssr>
+        <client-only v-if="!_isEmpty(categories)">
             <ul class="nav-custom">
                 <li>
-                    <a class="active" data-isotope-filter="*" data-isotope-group="gallery" href="#">Всички</a>
+                    <a :class="[!filterOption ? 'active' : '']" @click.prevent="onClickShowAll" href="">Всички</a>
                 </li>
                 <li v-for="projectCategory in projectCategories" :key="`project_category_tab_${projectCategory.id}`">
-                    <a data-isotope-filter="Type 1" data-isotope-group="gallery" href="#">{{ projectCategory.Name }}</a>
+                    <a
+                        :class="[
+                            filterOption === 'filterByCategory' && selectedCategoryId === projectCategory.id
+                                ? 'active'
+                                : '',
+                        ]"
+                        @click.prevent="onFilterClick(projectCategory.id)"
+                        href=""
+                        >{{ projectCategory.Name }}</a
+                    >
                 </li>
             </ul>
 
             <section class="flex flex-wrap justify-center py-10">
-                <div class="section-portfolio__gallery-holder">
+                <isotope
+                    ref="cpt"
+                    id="root_isotope"
+                    class="section-portfolio__gallery-holder"
+                    :options="getOptions()"
+                    :list="projects"
+                    v-images-loaded:on.progress="layout"
+                    @filter="filterOption = arguments[0]"
+                    @sort="sortOption = arguments[0]"
+                >
                     <article
                         v-for="project in projects"
                         :key="`project_card_${project.id}`"
-                        :style="getStyle()"
-                        class="section-portfolio__gallery-item md:w-1/2"
+                        class="section-portfolio__gallery-item"
                     >
-                        <header class="mb-6">
-                            <h3 class="text-3xl font-normal leading-loose">{{ project.Name }}</h3>
-                            <p class="text-lg">{{ project.Description_Short }}</p>
-                        </header>
-                        <nuxt-link to="gallery/project-1" class="button button-white button-arrow">
-                            Виж Проект
-                            <svg x="0px" y="0px" width="13px" height="22px" viewBox="0 0 16 24">
-                                <polygon fill="none" points="1,2.5 13,12 1,21.5 " />
-                            </svg>
-                        </nuxt-link>
+                        <div class="section-portfolio__gallery-item-inner" :style="getStyle()">
+                            <header class="mb-6">
+                                <h3 class="text-3xl font-normal leading-loose">{{ project.Name }}</h3>
+                                <p class="text-lg">{{ project.Description_Short }}</p>
+                                <img :src="getImgSrc()" class="hidden" alt="Not found" />
+                            </header>
+
+                            <nuxt-link to="gallery/project-1" class="button button-white button-arrow">
+                                Виж Проект
+                                <svg x="0px" y="0px" width="13px" height="22px" viewBox="0 0 16 24">
+                                    <polygon fill="none" points="1,2.5 13,12 1,21.5 " />
+                                </svg>
+                            </nuxt-link>
+                        </div>
                     </article>
-                </div>
+                </isotope>
             </section>
-        </no-ssr>
+        </client-only>
     </section>
 </template>
 
@@ -73,6 +94,8 @@ export default {
             categories: [],
             galleries: [],
             selectedCategoryId: null,
+            sortOption: null,
+            filterOption: null,
         };
     },
     apollo: {
@@ -108,16 +131,18 @@ export default {
             return this._filter(this.categories, category => category.Active && !this._isEmpty(category.projects));
         },
         projects() {
-            let projects;
+            // let projects;
 
-            if (!this.selectedCategoryId) {
+            const projects = this._flatMap(this.projectCategories, 'projects');
+
+            /* if (!this.selectedCategoryId) {
                 projects = this._flatMap(this.projectCategories, 'projects');
             } else {
                 projects = this._flatMap(
                     this._find(this.projectCategories, { id: this.selectedCategoryId }),
                     'projects',
                 );
-            }
+            } */
 
             return this._filter(projects, 'Active');
         },
@@ -132,6 +157,56 @@ export default {
         },
     },
     methods: {
+        layout() {
+            this.$refs.cpt.layout('masonry');
+        },
+        getOptions() {
+            const _this = this;
+
+            return {
+                itemSelector: '.section-portfolio__gallery-item',
+                percentPosition: true,
+                masonry: {
+                    gutter: 0,
+                    isFitWidth: true,
+                    columnWidth: '.section-portfolio__gallery-item',
+                },
+                getSortData: {
+                    id: 'id',
+                    name(project) {
+                        return project.Name.toLowerCase();
+                    },
+                },
+                getFilterData: {
+                    showAll() {
+                        return true;
+                    },
+                    filterByCategory(project) {
+                        return _this._find(project.categories, { id: _this.selectedCategoryId });
+                    },
+                },
+            };
+        },
+        sort(key) {
+            this.isotopeSort(key);
+            this.sortOption = key;
+        },
+        filter(key) {
+            if (this.filterOption === key) {
+                // eslint-disable-next-line no-param-reassign
+                key = null;
+            }
+            this.isotopeFilter(key);
+            this.filterOption = key;
+        },
+        onClickShowAll() {
+            this.selectedCategoryId = null;
+            this.$refs.cpt.filter('showAll');
+        },
+        onFilterClick(projectCategoryId) {
+            this.selectedCategoryId = projectCategoryId;
+            this.$refs.cpt.filter('filterByCategory');
+        },
         getStyle() {
             if (this._isEmpty(this.lawnGallery.Images)) {
                 return '';
@@ -140,6 +215,13 @@ export default {
             return {
                 'background-image': `url('${this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image)}')`,
             };
+        },
+        getImgSrc() {
+            if (this._isEmpty(this.lawnGallery.Images)) {
+                return '';
+            }
+
+            return this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image);
         },
     },
 };
@@ -162,20 +244,27 @@ export default {
 }
 
 .section-portfolio__gallery-holder {
-    @apply flex flex-wrap justify-center items-stretch -mx-6 overflow-hidden;
+    @apply flex flex-wrap justify-center items-stretch overflow-hidden;
     max-width: 100vw;
 }
 
 .section-portfolio__gallery-item {
-    @apply flex flex-col items-center justify-center w-full bg-cover bg-center bg-no-repeat overflow-hidden m-6 text-white text-center;
+    @apply flex items-center justify-center py-4 overflow-hidden;
+    width: calc(100vw - 2rem);
     height: 300px;
 }
 
-@screen lg {
-    .section-portfolio__gallery-holder {
-        max-width: 1900px;
-    }
+.section-portfolio__gallery-item-inner {
+    @apply flex flex-col items-center justify-center w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden text-white text-center;
+}
 
+@screen md {
+    .section-portfolio__gallery-item {
+        @apply w-1/2 px-4;
+    }
+}
+
+@screen lg {
     .section-portfolio__gallery-item {
         height: 350px;
     }

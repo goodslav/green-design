@@ -35,6 +35,10 @@ query Category($where: JSON) {
             Description_Short
             Description
             Active
+            categories {
+                id
+                Identifier
+            }
         }
     }
 }

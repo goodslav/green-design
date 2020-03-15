@@ -28,6 +28,10 @@ query Categories {
             Description_Short
             Description
             Active
+            categories {
+                id
+                Identifier
+            }
         }
     }
 }
