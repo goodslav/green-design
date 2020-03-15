@@ -104,6 +104,7 @@ module.exports = {
         { src: '~/plugins/vue-smooth-scroll', ssr: false },
         { src: '~/plugins/vue-isotope', ssr: false },
         { src: '~/plugins/vue-imagesLoaded', ssr: false },
+        { src: '~/plugins/vue-light-gallery', ssr: false },
         { src: '~/plugins/axios', ssr: false },
         { src: '~/plugins/mixins', ssr: false },
     ],

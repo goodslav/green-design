@@ -25,7 +25,12 @@
         <client-only v-if="!_isEmpty(categories)">
             <ul class="nav-custom">
                 <li>
-                    <a :class="[!filterOption ? 'active' : '']" @click.prevent="onClickShowAll" href="">Всички</a>
+                    <a
+                        :class="[!selectedCategoryId || filterOption === 'showAll' ? 'active' : '']"
+                        @click.prevent="onClickShowAll"
+                        href=""
+                        >Всички</a
+                    >
                 </li>
                 <li v-for="projectCategory in projectCategories" :key="`project_category_tab_${projectCategory.id}`">
                     <a
@@ -57,14 +62,18 @@
                         :key="`project_card_${project.id}`"
                         class="section-portfolio__gallery-item"
                     >
-                        <div class="section-portfolio__gallery-item-inner" :style="getStyle()">
+                        <div class="section-portfolio__gallery-item-inner" :style="getStyle(project)">
                             <header class="mb-6">
                                 <h3 class="text-3xl font-normal leading-loose">{{ project.Name }}</h3>
                                 <p class="text-lg">{{ project.Description_Short }}</p>
-                                <img :src="getImgSrc()" class="hidden" alt="Not found" />
+                                <img :src="getImgSrc(project)" class="hidden" alt="Not found" />
                             </header>
 
-                            <nuxt-link to="gallery/project-1" class="button button-white button-arrow">
+                            <nuxt-link
+                                v-if="!_isEmpty(project.gallery)"
+                                :to="`gallery/${project.gallery.Identifier}`"
+                                class="button button-white button-arrow"
+                            >
                                 Виж Проект
                                 <svg x="0px" y="0px" width="13px" height="22px" viewBox="0 0 16 24">
                                     <polygon fill="none" points="1,2.5 13,12 1,21.5 " />
@@ -113,6 +122,14 @@ export default {
         galleries: {
             prefetch: true,
             query: galleriesQuery,
+            variables() {
+                return {
+                    where: {
+                        Identifier_in: ['portfolio-page-hero-banner', 'portfolio-page-lawns-gallery'],
+                        Active: true,
+                    },
+                };
+            },
         },
     },
     computed: {
@@ -131,29 +148,30 @@ export default {
             return this._filter(this.categories, category => category.Active && !this._isEmpty(category.projects));
         },
         projects() {
-            // let projects;
+            if (this._isEmpty(this.projectCategories)) {
+                return [];
+            }
 
             const projects = this._flatMap(this.projectCategories, 'projects');
-
-            /* if (!this.selectedCategoryId) {
-                projects = this._flatMap(this.projectCategories, 'projects');
-            } else {
-                projects = this._flatMap(
-                    this._find(this.projectCategories, { id: this.selectedCategoryId }),
-                    'projects',
-                );
-            } */
 
             return this._filter(projects, 'Active');
         },
         gallery() {
-            return this._find(this.galleries, { Identifier: 'portfolio-page-hero-banner', Active: true });
+            if (this._isEmpty(this.galleries)) {
+                return null;
+            }
+
+            return this._find(this.galleries, { Identifier: 'portfolio-page-hero-banner' });
         },
         logo() {
             return this._first(this.organization.Logos);
         },
         lawnGallery() {
-            return this._find(this.galleries, { Identifier: 'portfolio-page-lawns-gallery', Active: true });
+            if (this._isEmpty(this.galleries)) {
+                return null;
+            }
+
+            return this._find(this.galleries, { Identifier: 'portfolio-page-lawns-gallery' });
         },
     },
     methods: {
@@ -207,21 +225,31 @@ export default {
             this.selectedCategoryId = projectCategoryId;
             this.$refs.cpt.filter('filterByCategory');
         },
-        getStyle() {
-            if (this._isEmpty(this.lawnGallery.Images)) {
-                return '';
+        getStyle(project) {
+            if (!this._isEmpty(project.Images)) {
+                return {
+                    'background-image': `url('${this.assetUrlFromObj(this._first(project.Images))}')`,
+                };
             }
+
+            const fallbackImgSrc = !this._isEmpty(this.lawnGallery.Images)
+                ? this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image)
+                : '';
 
             return {
-                'background-image': `url('${this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image)}')`,
+                'background-image': `url('${fallbackImgSrc}')`,
             };
         },
-        getImgSrc() {
-            if (this._isEmpty(this.lawnGallery.Images)) {
-                return '';
+        getImgSrc(project) {
+            if (!this._isEmpty(project.Images)) {
+                return this.assetUrlFromObj(this._first(project.Images));
             }
 
-            return this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image);
+            const fallbackImgSrc = !this._isEmpty(this.lawnGallery.Images)
+                ? this.assetUrlFromObj(this._first(this.lawnGallery.Images).Image)
+                : '';
+
+            return fallbackImgSrc;
         },
     },
 };

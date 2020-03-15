@@ -2,7 +2,7 @@
     <footer
         v-if="!_isEmpty(organizations) && !_isEmpty(categories) && !_isEmpty(articles)"
         :style="footerStyle"
-        class="bg-footer-default bg-image text-white"
+        class="bg-footer-default bg-image text-white overflow-hidden"
     >
         <div class="flex flex-wrap items-start justify-center xl:flex-row py-16 -m-2 overflow-hidden">
             <div class="flex flex-col items-center text-center justify-center w-full xl:w-1/4 p-2">

@@ -1,5 +1,5 @@
-query Galleries {
-    galleries {
+query Galleries($where: JSON) {
+    galleries(where: $where) {
         id
         Identifier
         Name

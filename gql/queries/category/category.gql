@@ -35,7 +35,18 @@ query Category($where: JSON) {
             Description_Short
             Description
             Active
+            Images {
+                id
+                provider
+                name
+                hash
+                url
+            }
             categories {
+                id
+                Identifier
+            }
+            gallery {
                 id
                 Identifier
             }

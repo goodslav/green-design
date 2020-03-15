@@ -13,7 +13,7 @@
 
         <div class="nav-links justify-end text-shadow--nav">
             <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
-            <nuxt-link to="portfolio">Портфолио</nuxt-link>
+            <nuxt-link to="/portfolio">Портфолио</nuxt-link>
             <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
 
@@ -26,7 +26,7 @@
         <div class="mobile-links" v-if="visible" @click="visible = !visible">
             <nuxt-link to="/">Начало</nuxt-link>
             <nuxt-link to="/#AboutUs">За Нас</nuxt-link>
-            <nuxt-link to="portfolio">Портфолио</nuxt-link>
+            <nuxt-link to="/portfolio">Портфолио</nuxt-link>
             <nuxt-link to="/#Contacts">Контакти</nuxt-link>
         </div>
     </nav>
