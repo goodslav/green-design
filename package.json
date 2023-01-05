@@ -35,7 +35,7 @@
         "dotenv": "^8.2.0",
         "ks-vue-scrollmagic": "^1.0.2",
         "lodash": "^4.17.15",
-        "nuxt": "^2.10.2",
+        "nuxt": "^2.15.8",
         "objectFitPolyfill": "^2.3.0",
         "qonfucius-nuxt-fontawesome": "1.0.1",
         "strapi-sdk-javascript": "^0.3.3",
